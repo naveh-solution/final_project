@@ -4,7 +4,7 @@ function HomePage() {
     return (
         <div>
             <h1>Home page</h1>
-            <Link to="/dairys">dairy Page</Link>
+            <Link to="/login">log-in</Link>
         </div>
     )
     }

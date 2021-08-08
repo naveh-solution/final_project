@@ -9,6 +9,7 @@ import './App.css';
 import NavbarComp from './Components/Nav-cp/Navbar';
 import DairyPage from './pages/DairysPage/DairyPage';
 import HomePage from './pages/HomePage/HomePage';
+import LoginPage from './pages/loginPage/LoginPage';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <NavbarComp/>
       <Switch>
         <Route exact path="/"><HomePage/></Route>
+        <Route exact path="/login"><LoginPage/></Route>
         <Route exact path="/dairys"><DairyPage/></Route>
         </Switch> 
     </HashRouter>
