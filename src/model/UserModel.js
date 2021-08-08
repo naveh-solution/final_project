@@ -1,10 +1,12 @@
 class UserModel {
-    constructor (id, fname,lname, email, pwd, privelage){
-        this.id = id;
-        this.fname = fname;
-        this.lname = lname;
-        this.email = email; 
-        this.pwd = pwd;
-        this.privelage = privelage;
+    constructor (user){
+        this.id = user.id;
+        this.fname = user.fname;
+        this.lname = user.lname;
+        this.email = user.email; 
+        this.pwd = user.pwd;
+        this.privelage = user.privelage;
     }
 }
+
+export default UserModel

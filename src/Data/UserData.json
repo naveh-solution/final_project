@@ -1,0 +1,19 @@
+[
+    {
+        "id": 1,
+        "fname": "Guy",
+        "lname": "naveh",
+        "email": "guy@guy.com",
+        "pwd": "223344",
+        "privelage": null
+    },
+
+    {
+        "id": 1,
+        "fname": "Guy",
+        "lname": "Naveh",
+        "email": "guyN@guy.com",
+        "pwd": "223344",
+        "privelage": "admin"
+    }
+]
