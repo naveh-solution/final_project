@@ -9,7 +9,6 @@ import './App.css';
 import NavbarComp from './Components/Nav-cp/Navbar';
 import DairyPage from './pages/DairysPage/DairyPage';
 import HomePage from './pages/HomePage/HomePage';
-import LoginPage from './pages/loginPage/LoginPage';
 import userData from './Data/UserData.json'
 import UserModel from './model/UserModel';
 
@@ -19,8 +18,6 @@ function App() {
   const [userActive, setUserActive] = React.useState(null);
 
   function login(newUserActive){
-    alert("bla bla")
-    console.log(newUserActive)
     setUserActive(newUserActive);
   }
 
@@ -29,7 +26,6 @@ function App() {
       <NavbarComp/>
       <Switch>
         <Route exact path="/"><HomePage users={users} login={login} userActive={userActive}/></Route>
-        <Route exact path="/login"><LoginPage users={users} login={login} userActive={userActive}/></Route>
         <Route exact path="/dairys"><DairyPage userActvie={userActive}/></Route>
         </Switch> 
     </HashRouter>
