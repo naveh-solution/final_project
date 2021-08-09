@@ -15,7 +15,7 @@ function LoginPage({users, login, userActive}) {
     
     function loginB(){
         console.log(email,userPwd, users)
-        const userActive = users.find(user => user.email === email && user.Pwd === userPwd)
+        const userActive = users.find(user => user.email === email && user.pwd === userPwd)
         console.log(userActive)
         if (userActive){
            login(userActive)
