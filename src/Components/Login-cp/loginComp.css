@@ -1,14 +1,26 @@
-.login-p{
-    width: 50%;
-    margin: auto;
+.login-cp{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 300px;
+    margin: auto 10px;
     background-color: #dbe9e0ff;
     border: solid #81a38dff 1px;
     border-radius: 8px;
 }
 
-.login-p > h1 , p {
+.loginSignup{
+    display: flex;
+    justify-content: space-around;
+}
+
+.login-cp > h4, p {
    text-align: center;
    margin: 10px auto;
+}
+
+.emailText{
+    font-size: 10px;
 }
 
 .textIn{
@@ -17,4 +29,8 @@
 
 .buttonBg{
     margin: 5px 2px;
+}
+
+.signupText{
+    font-size: 13px;
 }

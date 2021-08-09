@@ -1,12 +1,28 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 import LoginComp from '../../Components/Login-cp/LoginComp';
+import CardComp from '../../Components/cardHome-cp/CardComp';
+import './homePage.css'
+
+
+
+
 function HomePage({users, login, userActive}) {
+
+   
+
     return (
-        <div>
-            <h1>Home page</h1>
-             <LoginComp  users={users} login={login} userActive={userActive}/>
+        <div className="home-p">
+            <h1>Pain Dairy</h1>
+            <div className="cardsDiv">
+                <CardComp/>
+                <CardComp/>
+                <CardComp/>
+            </div>
+            <div className="login-div">
+             <LoginComp  users={users} login={login} userActive={userActive}/> 
+             </div>
         </div>
-    )
+    )   
     }
 export default HomePage

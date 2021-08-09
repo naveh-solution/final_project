@@ -1,0 +1,13 @@
+.login-div{
+    width: 200px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+}
+
+.cardsDiv{
+    width: 500px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}

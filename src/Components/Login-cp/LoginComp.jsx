@@ -7,9 +7,7 @@ function LoginComp({users, login, userActive}) {
     const [email, setEmail] = React.useState("");
     const [userPwd, setUserPwd] = React.useState("");
 
-    if (userActive){
-        return <Redirect to="/dairys"/>
-    }
+    
     
     function loginB(){
         const userActive = users.find(user => user.email === email && user.pwd === userPwd)
@@ -18,26 +16,34 @@ function LoginComp({users, login, userActive}) {
         }
     }
 
+    if (userActive){
+        return <Redirect to="/dairys"/>
+    }
+
     return (
-        <div className="login-p">
-            <h1>Login to your Daierys</h1>
-            <p>or <Link to="/signup">you can Signup here</Link> to start creating your own</p>
+        <div className="login-cp">
+            <h4>Login to your Dairy</h4>
+            <p className="signupText">or <Link to="/signup">you can Signup here</Link> to start creating your own</p>
             <Form>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
+                <Form.Group className="sm-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control type="email" placeholder="Enter email" className="textIn" value={email} onChange={(e) => setEmail(e.target.value)} />
-                    <Form.Text className="text-muted">
+                    <Form.Text className="text-muted emailText">
                         We'll never share your email with anyone else.
                     </Form.Text>
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
+                <Form.Group className="sm-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password"  className="textIn" value={userPwd} onChange={(e) => setUserPwd(e.target.value)}/>
                 </Form.Group>
+                <div className="loginSignup">
                 <Button variant="success" className="buttonBg" type="button" onClick={loginB}>
                     LOG-IN
+                </Button> <Button variant="success" className="buttonBg" type="button" onClick={loginB}>
+                    SIGN-UP
                 </Button>
+                </div>
             </Form>
         </div>
     );

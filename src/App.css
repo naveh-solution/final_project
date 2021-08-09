@@ -2,3 +2,8 @@ div[class *= "-p"]{
   background-color: #a5c3afff;
   margin: 15px auto;
 }
+
+div[class *= "-cp"]{
+  background-color: #a5c3afff;
+  margin: 15px auto;
+}

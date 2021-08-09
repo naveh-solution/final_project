@@ -16,14 +16,19 @@ function App() {
 
   const [users, setUsers] = React.useState(userData.map(justUser => new UserModel(justUser)));
   const [userActive, setUserActive] = React.useState(null);
+  
 
   function login(newUserActive){
     setUserActive(newUserActive);
   }
 
+  function logOut(){
+    setUserActive(null)
+  }
+
   return (
     <HashRouter>
-      <NavbarComp/>
+      <NavbarComp logOut={logOut}/>
       <Switch>
         <Route exact path="/"><HomePage users={users} login={login} userActive={userActive}/></Route>
         <Route exact path="/dairys"><DairyPage userActvie={userActive}/></Route>

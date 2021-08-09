@@ -1,21 +1,27 @@
 import React from 'react';
 import { Container, Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
-function NavbarComp() {
+function NavbarComp({userActive, logOut}) {
+
     return (
         <Navbar bg="light" expand="lg">
             <Container>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="#/">Home</Nav.Link>
+                        <Nav.Link as={Link} to="/">Home</Nav.Link>
                         <NavDropdown title="Dairy" id="basic-nav-dropdown">
-                            <NavDropdown.Item href="#action/3.1">All Events</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.2">Create Event</NavDropdown.Item>
-                            <NavDropdown.Item href="#action/3.3">Recommendations</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/dairys">All Events</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/create">Create Event</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/recommendation">Recommendations</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link href="#link">Admin</Nav.Link>
+                        <Nav.Link as={Link} to="/admin">Admin</Nav.Link>
                     </Nav>
+                    {userActive ? <Nav className="ms-auto">
+                        <Nav.Link href="#/" onClick={logOut}>Log-Out</Nav.Link>
+                    </Nav> : null }
+                    
                 </Navbar.Collapse>
                 <Navbar.Brand href="#/">Pain dairy</Navbar.Brand>
             </Container>
