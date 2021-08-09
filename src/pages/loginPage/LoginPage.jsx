@@ -4,17 +4,21 @@ import { Link, Redirect } from 'react-router-dom';
 import './loginPage.css'
 
 
-function LoginPage({users}) {
+function LoginPage({users, login, userActive}) {
 
     const [email, setEmail] = React.useState("");
     const [userPwd, setUserPwd] = React.useState("");
 
-    function login(){
-        const useractive = users.find(user => user.email === email || user.fname === email && user.Pwd === userPwd)
-
-        if (useractive){
-            alert("user is active");
-            <Redirect to="/dairys"/>
+    if (userActive){
+        return <Redirect to="/dairys"/>
+    }
+    
+    function loginB(){
+        console.log(email,userPwd, users)
+        const userActive = users.find(user => user.email === email && user.Pwd === userPwd)
+        console.log(userActive)
+        if (userActive){
+           login(userActive)
         }
     }
 
@@ -38,7 +42,7 @@ function LoginPage({users}) {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password"  className="textIn" value={userPwd} onChange={(e) => setUserPwd(e.target.value)}/>
                 </Form.Group>
-                <Button variant="success" className="bg" type="button" onClick={login}>
+                <Button variant="success" className="bg" type="button" onClick={loginB}>
                     LOG-IN
                 </Button>
             </Form>

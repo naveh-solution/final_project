@@ -1,11 +1,11 @@
 class UserModel {
-    constructor (user){
-        this.id = user.id;
-        this.fname = user.fname;
-        this.lname = user.lname;
-        this.email = user.email; 
-        this.pwd = user.pwd;
-        this.privelage = user.privelage;
+    constructor (justUser){
+        this.id = justUser.id;
+        this.fname = justUser.fname;
+        this.lname = justUser.lname;
+        this.email = justUser.email; 
+        this.pwd = justUser.pwd;
+        this.privelage = justUser.privelage;
     }
 }
 

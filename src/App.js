@@ -15,15 +15,22 @@ import UserModel from './model/UserModel';
 
 function App() {
 
-  const [users, setUsers] = React.useState(userData.map(user => new UserModel(user)));
+  const [users, setUsers] = React.useState(userData.map(justUser => new UserModel(justUser)));
+  const [userActive, setUserActive] = React.useState(null);
+
+  function login(newUserActive){
+    alert("bla bla")
+    console.log(newUserActive)
+    setUserActive(newUserActive);
+  }
 
   return (
     <HashRouter>
       <NavbarComp/>
       <Switch>
         <Route exact path="/"><HomePage/></Route>
-        <Route exact path="/login"><LoginPage users={users}/></Route>
-        <Route exact path="/dairys"><DairyPage/></Route>
+        <Route exact path="/login"><LoginPage users={users} login={login} userActive={userActive}/></Route>
+        <Route exact path="/dairys"><DairyPage userActvie={userActive}/></Route>
         </Switch> 
     </HashRouter>
 

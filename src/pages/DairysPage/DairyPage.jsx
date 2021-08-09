@@ -1,8 +1,14 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link, Redirect} from "react-router-dom";
 
 
-function DairyPage() {
+function DairyPage({userActvie}) {
+
+    if( !userActvie ) {
+        return <Redirect to="/"/>
+    }
+
+    
     return (
         <div>
             <h1>Dairy Page</h1>
