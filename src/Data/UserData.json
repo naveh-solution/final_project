@@ -5,7 +5,7 @@
         "lname": "naveh",
         "email": "guy@guy.com",
         "pwd": "223344",
-        "privelage": null
+        "privelage": "false"
     },
 
     {
@@ -14,6 +14,6 @@
         "lname": "Naveh",
         "email": "guyN@guy.com",
         "pwd": "223344",
-        "privelage": "admin"
+        "privelage": "true"
     }
 ]

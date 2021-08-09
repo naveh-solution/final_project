@@ -1,10 +1,11 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-function HomePage() {
+import LoginComp from '../../Components/Login-cp/LoginComp';
+function HomePage({users, login, userActive}) {
     return (
         <div>
             <h1>Home page</h1>
-            <Link to="/login">log-in</Link>
+             <LoginComp  users={users} login={login} userActive={userActive}/>
         </div>
     )
     }

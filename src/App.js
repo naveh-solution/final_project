@@ -28,7 +28,7 @@ function App() {
     <HashRouter>
       <NavbarComp/>
       <Switch>
-        <Route exact path="/"><HomePage/></Route>
+        <Route exact path="/"><HomePage users={users} login={login} userActive={userActive}/></Route>
         <Route exact path="/login"><LoginPage users={users} login={login} userActive={userActive}/></Route>
         <Route exact path="/dairys"><DairyPage userActvie={userActive}/></Route>
         </Switch> 
