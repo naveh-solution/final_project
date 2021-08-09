@@ -42,7 +42,7 @@ function LoginPage({users, login, userActive}) {
                     <Form.Label>Password</Form.Label>
                     <Form.Control type="password" placeholder="Password"  className="textIn" value={userPwd} onChange={(e) => setUserPwd(e.target.value)}/>
                 </Form.Group>
-                <Button variant="success" className="bg" type="button" onClick={loginB}>
+                <Button variant="success" className="buttonBg" type="button" onClick={loginB}>
                     LOG-IN
                 </Button>
             </Form>
