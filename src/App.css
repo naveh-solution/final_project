@@ -7,3 +7,6 @@ div[class *= "-cp"]{
   background-color: #a5c3afff;
   margin: 15px auto;
 }
+#root{
+  background-color: #c0d8caff;
+}

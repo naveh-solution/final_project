@@ -3,6 +3,15 @@
     background-color:  #a5c3afff;
     border: solid 1px #3c5344ff;
     border-radius: 20px;
+    margin: 5px;
+}
+.eventsBtns{
+    display: flex;
+    justify-content: space-around;
+}
+
+.myBtn{
+    background-color: #3c5344ff;
 }
 
 .colDiv{

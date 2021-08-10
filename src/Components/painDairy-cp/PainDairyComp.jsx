@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row } from 'react-bootstrap';
+import { Col, Row, Button } from 'react-bootstrap';
 import './painDairy.css'
 
 function PainDairyComp({events, userActive}) {
@@ -31,6 +31,11 @@ function PainDairyComp({events, userActive}) {
                     <p>{event.physHelp}, Meds: {event.medHelp}</p>
                 </Col>
             </div> )}
+            <div className="eventsBtns">
+            <Button variant="success">Create new Event</Button>
+            <Button variant="success">Manage Event</Button>
+            <Button variant="success">Sheare Event</Button>
+            </div>
         </div>
     );
 }
