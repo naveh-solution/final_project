@@ -1,6 +1,8 @@
-class DairyModel{
-    constructor(plainEvent){
+class EventModel{
+   
+  constructor (plainEvent) {
         this.id = plainEvent.id;
+        this.date = plainEvent.date;
         this.sTime = plainEvent.sTime;
         this.eTime = plainEvent.eTime;
         this.painLoc = plainEvent.painLoc;
@@ -13,3 +15,5 @@ class DairyModel{
         this.userId = plainEvent.userId;
       }
 }
+
+export default EventModel

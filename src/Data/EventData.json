@@ -1,6 +1,7 @@
 [
     {
         "id": 1,
+        "date" : "10/6/2021",
         "sTime": "12:33 PM",
         "eTime": "01:45 AM",
         "painLoc": "head behind the eyes and eers",
@@ -15,6 +16,7 @@
 
     {
         "id": 2,
+        "date" : "04/02/2021",
         "sTime": "09:12 PM",
         "eTime": "",
         "painLoc": "the connection betwen the haed and neck",
@@ -29,6 +31,7 @@
 
     {
         "id": 3,
+        "date" : "10/8/2021",
         "sTime": "06:54 AM",
         "eTime": "",
         "painLoc": "knee pain around the pik and down the tibia",
