@@ -1,0 +1,21 @@
+.mainDairyComp{
+    display: flex;
+    background-color:  #a5c3afff;
+    border: solid 1px #3c5344ff;
+    border-radius: 20px;
+}
+
+.colDiv{
+    display: flex;
+    margin: 10px;
+    border: 1px solid #3c5344ff ;
+    border-radius: 20px;
+    padding: 7px;
+}
+
+.painDcol{
+    border: 1px solid #3c5344ff ;
+    border-radius: 20px;
+    padding: 7px;
+    margin: 5px;
+}
