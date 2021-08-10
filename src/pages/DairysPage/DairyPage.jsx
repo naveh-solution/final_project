@@ -10,17 +10,17 @@ function DairyPage({userActvie}) {
         return <Redirect to="/"/>
     }
 
-    const hours = new Date().getHours(); 
-    const min = new Date().getMinutes();
-    const currentTime = hours + ":" + min
-    console.log(currentTime)
+    // const hours = new Date().getHours(); 
+    // const min = new Date().getMinutes();
+    // const currentTime = hours + ":" + min
+    // console.log(currentTime)
 
 
     return (
         <div>
             <h1>Dairy Page</h1>
             <PainDairyComp/>
-            <PainEventComp currentTime={currentTime}/>
+            {/* <PainEventComp currentTime={currentTime}/> */}
             <Link to="/">to Home Page</Link>
         </div>
     );
