@@ -1,7 +1,9 @@
+import {nanoid} from 'nanoid'
+
 class EventModel{
    
   constructor (plainEvent) {
-        this.id = plainEvent.id;
+        this.id = nanoid(6);
         this.date = plainEvent.date;
         this.sTime = plainEvent.sTime;
         this.eTime = plainEvent.eTime;

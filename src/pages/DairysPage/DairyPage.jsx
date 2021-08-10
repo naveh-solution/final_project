@@ -2,12 +2,12 @@ import React from 'react';
 import {Link, Redirect} from "react-router-dom";
 import PainDairyComp from '../../Components/painDairy-cp/PainDairyComp';
 import PainEventComp from '../../Components/painEvent-cp/PainEventComp';
-import EventData from '../../Data/EventData.json'
-import EventModel from '../../model/EventModel.js'
+import PainEventModal from '../../Components/painEvent-cp/PainEventModal';
 
-function DairyPage({userActvie}) {
+
+function DairyPage({userActvie, setShowOrNot, events}) {
     console.log(userActvie)
-    const [events, setEvents] = React.useState(EventData.map(plainEvent => new EventModel(plainEvent)))
+    
 
     if( !userActvie ) {
         return <Redirect to="/"/>
@@ -24,8 +24,7 @@ function DairyPage({userActvie}) {
     return (
         <div>
             <h1>Dairy Page</h1>
-            <PainDairyComp events={events} userActvie={userActvie}/>
-            {/* <PainEventComp currentTime={currentTime}/> */}
+            <PainDairyComp events={events} userActvie={userActvie} setShowOrNot={setShowOrNot}/>
             <Link to="/">to Home Page</Link>
         </div>
     );
