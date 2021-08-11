@@ -1,8 +1,8 @@
 import React from 'react';
 import {Link, Redirect} from "react-router-dom";
 import PainDairyComp from '../../Components/painDairy-cp/PainDairyComp';
-import PainEventComp from '../../Components/painEvent-cp/PainEventComp';
-import PainEventModal from '../../Components/painEvent-cp/PainEventModal';
+import PainEventComp from '../../Components/painEventModal-cp/PainEventComp';
+import PainEventModal from '../../Components/painEventModal-cp/PainEventModal';
 
 
 function DairyPage({userActvie, setShowOrNot, events, setSelectedEvent}) {
