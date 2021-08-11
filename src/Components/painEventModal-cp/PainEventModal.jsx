@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
 import './painEventComp.css'
 
-function PainEventModal({ addEvent, show, onHide, selectedEvent, setSelectedEvent }) {
+function PainEventModal({ addEvent, show, onHide }) {
 
     const [painLoc, setPainLoc] = React.useState("");
     const [painTriger, setPainTriger] = React.useState("");
@@ -20,17 +20,8 @@ function PainEventModal({ addEvent, show, onHide, selectedEvent, setSelectedEven
             setEventDate("")
             setSelfT("")
             setEnvStatus("")
-            setSelectedEvent("")
         }
-        if (selectedEvent) {
-            setPainLoc(selectedEvent.painLoc)
-            setPainTriger(selectedEvent.painTriger)
-            setStartT(selectedEvent.startT)
-            setEventDate(selectedEvent.eventDate)
-            setSelfT(selectedEvent.selfT)
-            setEnvStatus(selectedEvent.envStatus)
-        }
-    }, [show, selectedEvent]);
+    }, [show]);
 
     return (
         <div>
@@ -46,11 +37,11 @@ function PainEventModal({ addEvent, show, onHide, selectedEvent, setSelectedEven
                             <Col className="leftPenEvent">
                                 <Form>
                                     <div className="mb-3 dateTimeRow">
-                                        <Form.Group as={Col} controlId="formPainEventStartT:">
+                                        <Form.Group as={Col} controlId="formPainEventStartT:" className="dateTimeInput">
                                             <Form.Label>Date of Event</Form.Label>
                                             <Form.Control type="date" className="dateTime" value={eventDate} onChange={e => setEventDate(e.target.value)} ></Form.Control>
                                         </Form.Group>
-                                        <Form.Group as={Col} controlId="formPainEventStartT:">
+                                        <Form.Group as={Col} controlId="formPainEventStartT:" className="dateTimeInput">
                                             <Form.Label>Start Time:</Form.Label>
                                             <Form.Control type="time" className="dateTime" value={startT} onChange={e => setStartT(e.target.value)} ></Form.Control>
                                         </Form.Group>
@@ -78,7 +69,6 @@ function PainEventModal({ addEvent, show, onHide, selectedEvent, setSelectedEven
                                 </Form>
                             </Col>
                         </Row>
-                        {/* {selectedevent && } */}
                     </div>
                 </Modal.Body>
                 <Modal.Footer>

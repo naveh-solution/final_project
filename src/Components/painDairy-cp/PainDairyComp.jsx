@@ -5,13 +5,21 @@ import './painDairy.css'
 
 
 
-function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent }) {
+function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent, setManageShowOrNot, selectedEvent }) {
 
+    const [isSelected, setIsSelected] = React.useState(false)
+
+    let inSelected
    
    //function that get the selected event from the list and will open it in the modal for editing
     function eventToModal(selectedEvent){
-        setSelectedEvent(selectedEvent);
-        setShowOrNot(true);
+        setIsSelected(true)
+        inSelected = selectedEvent;
+    }
+
+    function manageClick(){
+        setSelectedEvent(inSelected);
+        setManageShowOrNot(true);
     }
 
     return (
@@ -46,7 +54,7 @@ function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent }) {
             </div>)}
             <div className="eventsBtns">
                 <Button variant="success" onClick={() => setShowOrNot(true)}>Create new Event</Button>
-                <Button variant="success">Manage Event</Button>
+                <Button variant="success" disabled={!isSelected} onClick={() => manageClick() }>Manage Event</Button>
                 <Button variant="success">Sheare Event</Button>
             </div>
         </div>
