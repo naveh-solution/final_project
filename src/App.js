@@ -1,10 +1,5 @@
 import React from 'react'
-import {
-  Switch,
-  Route,
-  Link,
-  HashRouter
-} from "react-router-dom";
+import { Switch, Route, HashRouter} from "react-router-dom";
 import './App.css';
 import NavbarComp from './Components/Nav-cp/Navbar';
 import DairyPage from './pages/DairysPage/DairyPage';
@@ -22,9 +17,12 @@ function App() {
   const [showOrNot, setShowOrNot] = React.useState(false);
   const [events, setEvents] = React.useState(EventData.map( plainEvent => new EventModel(plainEvent)))
 
+  const userActiveEvents = userActive ? events.filter(plainEvent => plainEvent.userId === userActive.id) : [] ;
+
   function addEvent(painLoc, painTriger, startT, eventDate, selfT, envStatus, endT, physHelp, medHelp, otherHelp) {
     const activeUId = userActive ? userActive.id : null ;
     const newEvent = new EventModel({ eventDate, startT, endT, painLoc, painTriger, selfT, envStatus, physHelp, medHelp, otherHelp, activeUId})
+    console.log(newEvent)
     setEvents(events.concat(newEvent))
     setShowOrNot(false);
   }
@@ -44,7 +42,7 @@ function App() {
       <PainEventModal show={showOrNot} onHide={() => setShowOrNot(false)} addEvent={addEvent} />
       <Switch>
         <Route exact path="/"><HomePage users={users} login={login} userActive={userActive} /></Route>
-        <Route exact path="/dairys"><DairyPage userActvie={userActive} setShowOrNot={setShowOrNot} events={events} /></Route>
+        <Route exact path="/dairys"><DairyPage userActvie={userActive} setShowOrNot={setShowOrNot} events={userActiveEvents} /></Route>
       </Switch>
     </HashRouter>
 
