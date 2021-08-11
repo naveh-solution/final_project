@@ -16,14 +16,16 @@ function App() {
   const [userActive, setUserActive] = React.useState(null);
   const [showOrNot, setShowOrNot] = React.useState(false);
   const [events, setEvents] = React.useState(EventData.map( plainEvent => new EventModel(plainEvent)))
+   
+  console.log(events)
 
-  const userActiveEvents = userActive ? events.filter(plainEvent => plainEvent.userId === userActive.id) : [] ;
+  const userActiveEvents = userActive ? events.filter(plainEvent => plainEvent.activeUId === userActive.id) : [] ;
 
   function addEvent(painLoc, painTriger, startT, eventDate, selfT, envStatus, endT, physHelp, medHelp, otherHelp) {
     const activeUId = userActive ? userActive.id : null ;
     const newEvent = new EventModel({ eventDate, startT, endT, painLoc, painTriger, selfT, envStatus, physHelp, medHelp, otherHelp, activeUId})
     console.log(newEvent)
-    // setEvents(events.concat(newEvent))
+    setEvents(events.concat(newEvent))
     setShowOrNot(false);
   }
 

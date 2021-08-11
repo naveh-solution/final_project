@@ -10,12 +10,19 @@ function PainEventModal({ addEvent, show, onHide }) {
     const [eventDate, setEventDate] = React.useState("")
     const [selfT, setSelfT] = React.useState("")
     const [envStatus, setEnvStatus] = React.useState("")
-
-    console.log(show)
+     
+    function clearForm() {
+        setPainLoc("");
+        setPainTriger("");
+        setStartT("");
+        setEventDate("");
+        setSelfT("");
+        setEnvStatus("");
+    }
 
     return (
         <div>
-            <Modal show={show} size="xl" aria-labelledby="cont-for-adding_manage-event" centered >
+            <Modal show={show} onHide={onHide} size="xl" aria-labelledby="cont-for-adding_manage-event" centered >
                 <Modal.Header closeButton>
                     <Modal.Title id="contained-modal-title-vcenter">
                         Crate new Event
@@ -62,7 +69,7 @@ function PainEventModal({ addEvent, show, onHide }) {
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button className="createBtn" onClick={addEvent(painLoc, painTriger, startT, eventDate, selfT, envStatus)}>Create Event</Button>
+                    <Button className="createBtn" onClick={() => addEvent(painLoc, painTriger, startT, eventDate, selfT, envStatus)}>Create Event</Button>
                 </Modal.Footer>
             </Modal>
         </div>

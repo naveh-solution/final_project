@@ -2,6 +2,10 @@ import React from 'react';
 import { Col, Row, Button } from 'react-bootstrap';
 import './painDairy.css'
 
+
+//eventDate, startT, endT, painLoc, painTriger, selfT, envStatus, physHelp, medHelp, otherHelp, activeUId
+
+
 function PainDairyComp({ events, userActive, setShowOrNot }) {
     return (
         <div>
@@ -9,11 +13,11 @@ function PainDairyComp({ events, userActive, setShowOrNot }) {
                 <Col>
                     <div className="colDiv">
                         <h6>Day of Event:</h6>
-                        <p>{event.date}</p>
+                        <p>{event.eventDate}</p>
                         <h6>Start Time:</h6>
-                        <p>{event.sTime}</p>
-                        {event.eTime !== "" ? <><h6>End Time:</h6>
-                            <p>{event.eTime}</p></> : null} 
+                        <p>{event.startT}</p>
+                        {event.endT !== "" ? <><h6>End Time:</h6>
+                            <p>{event.endT}</p></> : null} 
                     </div>
                     <div className="colDiv">
                         <h6>Place of the Pain:</h6>
@@ -22,15 +26,15 @@ function PainDairyComp({ events, userActive, setShowOrNot }) {
                 </Col>
                 <Col md={2} className="painDcol">
                     <h6>Self Thoughts:</h6>
-                    <p>{event.selfThou} </p>
+                    <p>{event.selfT} </p>
                 </Col>
                 <Col md={2} className="painDcol">
                     <h6>Physical Trigger:</h6>
-                    <p>{event.physTriger}</p>
+                    <p>{event.painTriger}</p>
                 </Col>
                 <Col md={2} className="painDcol">
                     <h6>What Helped:</h6>
-                    <p> <span>{event.physHelp ? <>Physical {event.physHelp} </> : null }</span> <span>{event.medHelp ? <>Meds  {event.medHelp} </> : null }  </span>  <span>{event.otherHelp ? <> <h6>Other:</h6>  {event.otherHelp} </> : null }  </span></p>
+                    <p> <span>{event.physHelp ? <>Physical {event.physHelp} </> : null }</span> <span>{event.medHelp ? <>Meds  {event.medHelp} </> : null }  </span>  <span>{event.otherHelp ? <> Other:  {event.otherHelp} </> : null }  </span></p>
                 </Col>
             </div>)}
             <div className="eventsBtns">
