@@ -34,7 +34,7 @@ function PainDairyComp({ events, userActive, setShowOrNot }) {
                 </Col>
                 <Col md={2} className="painDcol">
                     <h6>What Helped:</h6>
-                    <p> <span>{event.physHelp ? <>Physical {event.physHelp} </> : null }</span> <span>{event.medHelp ? <>Meds  {event.medHelp} </> : null }  </span>  <span>{event.otherHelp ? <> Other:  {event.otherHelp} </> : null }  </span></p>
+                    <p> <span>{event.physHelp ? <>Physical: {event.physHelp} </> : null }</span> <span>{event.medHelp ? <>Meds:  {event.medHelp} </> : null }  </span>  <span>{event.otherHelp ? <> Other:  {event.otherHelp} </> : null }  </span></p>
                 </Col>
             </div>)}
             <div className="eventsBtns">

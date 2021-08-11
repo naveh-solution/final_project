@@ -11,6 +11,17 @@ function PainEventModal({ addEvent, show, onHide }) {
     const [selfT, setSelfT] = React.useState("")
     const [envStatus, setEnvStatus] = React.useState("")
 
+    React.useEffect(() => {
+        if (show === false) {
+            setPainLoc("")
+            setPainTriger("")
+            setStartT("")
+            setEventDate("")
+            setSelfT("")
+            setEnvStatus("")
+        }
+      }, [show]);
+
     return (
         <div>
             <Modal show={show} onHide={onHide} size="xl" aria-labelledby="cont-for-adding_manage-event" centered >
