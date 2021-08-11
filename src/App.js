@@ -23,7 +23,7 @@ function App() {
     const activeUId = userActive ? userActive.id : null ;
     const newEvent = new EventModel({ eventDate, startT, endT, painLoc, painTriger, selfT, envStatus, physHelp, medHelp, otherHelp, activeUId})
     console.log(newEvent)
-    setEvents(events.concat(newEvent))
+    // setEvents(events.concat(newEvent))
     setShowOrNot(false);
   }
 

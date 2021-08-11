@@ -19,9 +19,9 @@ function NavbarComp({userActive, logOut, setShowOrNot, showOrNot}) {
                         </NavDropdown>
                         <Nav.Link as={Link} to="/admin">Admin</Nav.Link>
                     </Nav>
-                    {userActive ? <Nav className="ms-auto">
+                    {userActive ?  <><Nav className="ms-auto">
                         <Nav.Link as={Button} onClick={logOut}>Log-Out</Nav.Link>
-                    </Nav> : null }
+                    </Nav></> : null }
                     
                 </Navbar.Collapse>
                 <Navbar.Brand href="#/">Pain dairy</Navbar.Brand>
