@@ -16,8 +16,8 @@ function App() {
   const [userActive, setUserActive] = React.useState(null);
   const [showOrNot, setShowOrNot] = React.useState(false);
   const [events, setEvents] = React.useState(EventData.map( plainEvent => new EventModel(plainEvent)))
-   
-  console.log(events)
+  const [selectedEvent, setSelectedEvent] = React.useState()
+  
 
   const userActiveEvents = userActive ? events.filter(plainEvent => plainEvent.activeUId === userActive.id) : [] ;
 
@@ -41,10 +41,10 @@ function App() {
   return (
     <HashRouter>
       <NavbarComp logOut={logOut} setShowOrNot={setShowOrNot} showOrNot={showOrNot} />
-      <PainEventModal show={showOrNot} onHide={() => setShowOrNot(false)} addEvent={addEvent} />
+      <PainEventModal show={showOrNot} onHide={() => setShowOrNot(false)} addEvent={addEvent} selectedEvent={selectedEvent} setSelectedEvent={setSelectedEvent} />
       <Switch>
         <Route exact path="/"><HomePage users={users} login={login} userActive={userActive} /></Route>
-        <Route exact path="/dairys"><DairyPage userActvie={userActive} setShowOrNot={setShowOrNot} events={userActiveEvents} /></Route>
+        <Route exact path="/dairys"><DairyPage userActvie={userActive} setShowOrNot={setShowOrNot} events={userActiveEvents} setSelectedEvent={setSelectedEvent} /></Route>
       </Switch>
     </HashRouter>
 

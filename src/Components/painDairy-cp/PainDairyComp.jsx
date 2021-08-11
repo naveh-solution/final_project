@@ -3,13 +3,20 @@ import { Col, Row, Button } from 'react-bootstrap';
 import './painDairy.css'
 
 
-//eventDate, startT, endT, painLoc, painTriger, selfT, envStatus, physHelp, medHelp, otherHelp, activeUId
 
 
-function PainDairyComp({ events, userActive, setShowOrNot }) {
+function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent }) {
+
+   
+   //function that get the selected event from the list and will open it in the modal for editing
+    function eventToModal(selectedEvent){
+        setSelectedEvent(selectedEvent);
+        setShowOrNot(true);
+    }
+
     return (
         <div>
-            {events.map(event => <div className="mainDairyComp" key={event.id} onClick= {() => console.log(event.id)}>
+            {events.map(event => <div className="mainDairyComp" key={event.id} onClick= {() => eventToModal(event) }>
                 <Col>
                     <div className="colDiv">
                         <h6>Day of Event:</h6>

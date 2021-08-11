@@ -2,7 +2,7 @@
     {
         "eventDate" : "10/6/2021",
         "startT": "12:33 PM",
-        "endT": "01:45 AM",
+        "endT": "01:45",
         "painLoc": "head behind the eyes and eers",
         "painTriger": "choing gum",
         "selfT": "I should't chow gum cuse it will cuse me pain after",
@@ -15,7 +15,7 @@
 
     {
         "eventDate" : "04/02/2021",
-        "startT": "09:12 PM",
+        "startT": "09:12",
         "endT": "",
         "painLoc": "the connection betwen the haed and neck",
         "painTriger": "gooing down sters",
@@ -29,7 +29,7 @@
 
     {
         "eventDate" : "10/8/2021",
-        "startT": "06:54 AM",
+        "startT": "06:54",
         "endT": "",
         "painLoc": "knee pain around the pik and down the tibia",
         "painTriger": "trying to get out of bad",

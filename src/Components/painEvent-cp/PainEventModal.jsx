@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
 import './painEventComp.css'
 
-function PainEventModal({ addEvent, show, onHide }) {
+function PainEventModal({ addEvent, show, onHide, selectedEvent, setSelectedEvent }) {
 
     const [painLoc, setPainLoc] = React.useState("");
     const [painTriger, setPainTriger] = React.useState("");
@@ -10,6 +10,7 @@ function PainEventModal({ addEvent, show, onHide }) {
     const [eventDate, setEventDate] = React.useState("")
     const [selfT, setSelfT] = React.useState("")
     const [envStatus, setEnvStatus] = React.useState("")
+
 
     React.useEffect(() => {
         if (show === false) {
@@ -19,8 +20,17 @@ function PainEventModal({ addEvent, show, onHide }) {
             setEventDate("")
             setSelfT("")
             setEnvStatus("")
+            setSelectedEvent("")
         }
-      }, [show]);
+        if (selectedEvent) {
+            setPainLoc(selectedEvent.painLoc)
+            setPainTriger(selectedEvent.painTriger)
+            setStartT(selectedEvent.startT)
+            setEventDate(selectedEvent.eventDate)
+            setSelfT(selectedEvent.selfT)
+            setEnvStatus(selectedEvent.envStatus)
+        }
+    }, [show, selectedEvent]);
 
     return (
         <div>
@@ -68,6 +78,7 @@ function PainEventModal({ addEvent, show, onHide }) {
                                 </Form>
                             </Col>
                         </Row>
+                        {/* {selectedevent && } */}
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
