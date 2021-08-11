@@ -9,7 +9,7 @@ import './painDairy.css'
 function PainDairyComp({ events, userActive, setShowOrNot }) {
     return (
         <div>
-            {events.map(event => <div className="mainDairyComp">
+            {events.map(event => <div className="mainDairyComp" key={event.id} onClick= {() => console.log(event.id)}>
                 <Col>
                     <div className="colDiv">
                         <h6>Day of Event:</h6>

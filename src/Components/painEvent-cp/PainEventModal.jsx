@@ -10,15 +10,6 @@ function PainEventModal({ addEvent, show, onHide }) {
     const [eventDate, setEventDate] = React.useState("")
     const [selfT, setSelfT] = React.useState("")
     const [envStatus, setEnvStatus] = React.useState("")
-     
-    function clearForm() {
-        setPainLoc("");
-        setPainTriger("");
-        setStartT("");
-        setEventDate("");
-        setSelfT("");
-        setEnvStatus("");
-    }
 
     return (
         <div>
