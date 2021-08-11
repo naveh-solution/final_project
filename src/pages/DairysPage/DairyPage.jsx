@@ -23,7 +23,7 @@ function DairyPage({userActvie, setShowOrNot, events, setSelectedEvent, setManag
 
     return (
         <div>
-            <h1>Dairy Page</h1>
+            <h1>Diary Page</h1>
             <PainDairyComp events={events} userActvie={userActvie} setShowOrNot={setShowOrNot} setSelectedEvent={setSelectedEvent} setManageShowOrNot={setManageShowOrNot} selectedEvent={selectedEvent} />
             <Link to="/">to Home Page</Link>
         </div>

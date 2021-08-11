@@ -31,7 +31,11 @@ function App() {
     setShowOrNot(false);
   }
 
-  
+  function saveEvent(manageEvent, eventDate, startT, endT, painLoc, painTriger, selfT, envStatus, physHelp, medHelp, otherHelp){
+    
+    const activeUId = userActive ? userActive.id : null ;
+    
+  }
 
 
   function login(newUserActive) {
@@ -46,7 +50,7 @@ function App() {
     <HashRouter>
       <NavbarComp logOut={logOut} setShowOrNot={setShowOrNot} showOrNot={showOrNot} />
       <PainEventModal show={showOrNot} onHide={() => setShowOrNot(false)} addEvent={addEvent}  />
-      <EventManageModalComp show={manageShowOrNot} onHide={() => setManageShowOrNot(false)} selectedEvent={selectedEvent}  setSelectedEvent={setSelectedEvent} />
+      <EventManageModalComp show={manageShowOrNot} onHide={() => setManageShowOrNot(false)} selectedEvent={selectedEvent}  setSelectedEvent={setSelectedEvent} saveEvent={saveEvent} />
       <Switch>
         <Route exact path="/"><HomePage users={users} login={login} userActive={userActive} /></Route>
         <Route exact path="/dairys"><DairyPage userActvie={userActive} setShowOrNot={setShowOrNot} events={userActiveEvents} setSelectedEvent={setSelectedEvent} setManageShowOrNot={setManageShowOrNot} selectedEvent={selectedEvent}/></Route>

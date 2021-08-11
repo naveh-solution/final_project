@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
 import './eventManageModalComp.css'
 
-function EventManageModalComp({ saveEvent, show, onHide, selectedEvent, setSelectedEvent }) {
+function EventManageModalComp({ show, onHide, selectedEvent, setSelectedEvent, saveEvent }) {
 
     const [painLoc, setPainLoc] = React.useState("");
     const [painTriger, setPainTriger] = React.useState("");
@@ -105,7 +105,7 @@ function EventManageModalComp({ saveEvent, show, onHide, selectedEvent, setSelec
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button className="createBtn" onClick={() => saveEvent(painLoc, painTriger, startT, eventDate, selfT, envStatus)}>Save</Button>
+                    <Button className="createBtn" onClick={() => saveEvent(selectedEvent, eventDate, startT, endT, painLoc, painTriger, selfT, envStatus, phyHelp, medHelp, othHelp)}>Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>
