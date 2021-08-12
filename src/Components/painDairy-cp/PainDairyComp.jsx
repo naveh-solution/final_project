@@ -5,16 +5,17 @@ import './painDairy.css'
 
 
 
-function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent, setManageShowOrNot, selectedEvent }) {
+function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent, setManageShowOrNot, selectedEvent, manageIndex }) {
 
     const [isSelected, setIsSelected] = React.useState(false)
 
     let inSelected
    
    //function that get the selected event from the list and will open it in the modal for editing
-    function eventToModal(selectedEvent){
+    function eventToModal(selectedEvent, index){
         setIsSelected(true)
         inSelected = selectedEvent;
+        manageIndex = index;
     }
 
     function manageClick(){
@@ -24,7 +25,7 @@ function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent, set
 
     return (
         <div>
-            {events.map(event => <div className="mainDairyComp" key={event.id} onClick= {() => eventToModal(event) }>
+            {events.map((event, index) => <div className="mainDairyComp" key={event.id} onClick= {() => eventToModal(event, index) }>
                 <Col>
                     <div className="colDiv">
                         <h6>Day of Event:</h6>

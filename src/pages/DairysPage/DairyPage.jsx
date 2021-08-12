@@ -5,7 +5,7 @@ import PainEventComp from '../../Components/painEventModal-cp/PainEventComp';
 import PainEventModal from '../../Components/painEventModal-cp/PainEventModal';
 
 
-function DairyPage({userActvie, setShowOrNot, events, setSelectedEvent, setManageShowOrNot, selectedEvent}) {
+function DairyPage({userActvie, setShowOrNot, events, setSelectedEvent, setManageShowOrNot, selectedEvent, manageIndex}) {
     console.log(userActvie)
     
 
@@ -24,7 +24,7 @@ function DairyPage({userActvie, setShowOrNot, events, setSelectedEvent, setManag
     return (
         <div>
             <h1>Diary Page</h1>
-            <PainDairyComp events={events} userActvie={userActvie} setShowOrNot={setShowOrNot} setSelectedEvent={setSelectedEvent} setManageShowOrNot={setManageShowOrNot} selectedEvent={selectedEvent} />
+            <PainDairyComp events={events} userActvie={userActvie} setShowOrNot={setShowOrNot} setSelectedEvent={setSelectedEvent} setManageShowOrNot={setManageShowOrNot} selectedEvent={selectedEvent} manageIndex={manageIndex} />
             <Link to="/">to Home Page</Link>
         </div>
     );

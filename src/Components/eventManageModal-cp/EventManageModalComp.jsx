@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
 import './eventManageModalComp.css'
 
-function EventManageModalComp({ show, onHide, selectedEvent, setSelectedEvent, saveEvent }) {
+function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIndex }) {
 
     const [painLoc, setPainLoc] = React.useState("");
     const [painTriger, setPainTriger] = React.useState("");
@@ -12,23 +12,25 @@ function EventManageModalComp({ show, onHide, selectedEvent, setSelectedEvent, s
     const [envStatus, setEnvStatus] = React.useState("")
     const [endT, setEndT] = React.useState("")
     const [medHelp, setMedHelp] = React.useState("")
-    const [phyHelp, setPhyHelp] = React.useState("")
-    const [othHelp, setOthHelp] = React.useState("")
+    const [physHelp, setPhysHelp] = React.useState("")
+    const [otherHelp, setOtherHelp] = React.useState("")
 
     React.useEffect(() => {
-        if (show === false) {
+       if(!show) {
             setPainLoc("")
             setPainTriger("")
             setStartT("")
             setEventDate("")
             setSelfT("")
             setEnvStatus("")
-            setSelectedEvent()
             setEndT("")
             setMedHelp("")
-            setPhyHelp("")
-            setOthHelp("")
+            setPhysHelp("")
+            setOtherHelp("")
         }
+    }, [show]);
+
+    React.useEffect(() => {
         if (selectedEvent) {
             setPainLoc(selectedEvent.painLoc)
             setPainTriger(selectedEvent.painTriger)
@@ -37,7 +39,23 @@ function EventManageModalComp({ show, onHide, selectedEvent, setSelectedEvent, s
             setSelfT(selectedEvent.selfT)
             setEnvStatus(selectedEvent.envStatus)
         }
-    }, [show, selectedEvent]);
+    }, [selectedEvent])
+
+    const createEvent = () => {
+        const newEvn = { 
+            eventDate,
+            startT,
+            endT,
+            painLoc,
+            painTriger,
+            selfT,
+            envStatus, 
+            physHelp,
+            medHelp,
+            otherHelp
+        }
+        saveEvent(newEvn, manageIndex);
+    }
 
     return (
         <div>
@@ -93,11 +111,11 @@ function EventManageModalComp({ show, onHide, selectedEvent, setSelectedEvent, s
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formPainEventSelfT">
                                         <Form.Label>Physical: <span className="note">(e.g physicalTheropy ex)</span></Form.Label>
-                                        <Form.Control as="textarea" rows={3} className="textarea" value={phyHelp} onChange={e => setPhyHelp(e.target.value)}></Form.Control>
+                                        <Form.Control as="textarea" rows={3} className="textarea" value={physHelp} onChange={e => setPhysHelp(e.target.value)}></Form.Control>
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formPainEventSelfT">
                                         <Form.Label>Other: <span className="note">(e.g Mentor, Psychologist etc.)</span></Form.Label>
-                                        <Form.Control as="textarea" rows={3} className="textarea" value={othHelp} onChange={e => setOthHelp(e.target.value)}></Form.Control>
+                                        <Form.Control as="textarea" rows={3} className="textarea" value={otherHelp} onChange={e => setOtherHelp(e.target.value)}></Form.Control>
                                     </Form.Group>
                                 </Form>
                             </Col>
@@ -105,7 +123,7 @@ function EventManageModalComp({ show, onHide, selectedEvent, setSelectedEvent, s
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button className="createBtn" onClick={() => saveEvent(selectedEvent, eventDate, startT, endT, painLoc, painTriger, selfT, envStatus, phyHelp, medHelp, othHelp)}>Save</Button>
+                    <Button className="createBtn" onClick={() => createEvent()}>Save</Button>
                 </Modal.Footer>
             </Modal>
         </div>

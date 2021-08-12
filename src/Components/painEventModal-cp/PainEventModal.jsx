@@ -23,6 +23,22 @@ function PainEventModal({ addEvent, show, onHide }) {
         }
     }, [show]);
 
+    const createEvent = () => {
+        const newEvn = { 
+            eventDate,
+            startT,
+            endT : "",
+            painLoc,
+            painTriger,
+            selfT,
+            envStatus, 
+            physHelp: "",
+            medHelp: "",
+            otherHelp: ""
+        }
+        addEvent(newEvn);
+    }
+
     return (
         <div>
             <Modal show={show} onHide={onHide} size="xl" aria-labelledby="cont-for-adding_manage-event" centered >
@@ -72,7 +88,7 @@ function PainEventModal({ addEvent, show, onHide }) {
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button className="createBtn" onClick={() => addEvent(painLoc, painTriger, startT, eventDate, selfT, envStatus)}>Create Event</Button>
+                    <Button className="createBtn" onClick={() => createEvent()}>Create Event</Button>
                 </Modal.Footer>
             </Modal>
         </div>

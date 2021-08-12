@@ -19,22 +19,30 @@ function App() {
   const [manageShowOrNot, setManageShowOrNot] = React.useState(false);
   const [events, setEvents] = React.useState(EventData.map( plainEvent => new EventModel(plainEvent)))
   const [selectedEvent, setSelectedEvent] = React.useState()
-  
+  const [manageIndex, setManageIndex] = React.useState()
 
   const userActiveEvents = userActive ? events.filter(plainEvent => plainEvent.activeUId === userActive.id) : [] ;
 
-  function addEvent(painLoc, painTriger, startT, eventDate, selfT, envStatus, endT, physHelp, medHelp, otherHelp) {
+  function addEvent(newEvent) {
     const activeUId = userActive ? userActive.id : null ;
-    const newEvent = new EventModel({ eventDate, startT, endT, painLoc, painTriger, selfT, envStatus, physHelp, medHelp, otherHelp, activeUId})
-    console.log(newEvent)
-    setEvents(events.concat(newEvent))
+    newEvent.activeUId = activeUId;
+    newEvent = new EventModel(newEvent);
+    console.log(newEvent);
+    setEvents(events.concat(newEvent));
     setShowOrNot(false);
   }
 
-  function saveEvent(manageEvent, eventDate, startT, endT, painLoc, painTriger, selfT, envStatus, physHelp, medHelp, otherHelp){
+
+  function saveEvent(newEvent, index){
     
     const activeUId = userActive ? userActive.id : null ;
-    
+    newEvent.activeUId = activeUId;
+    events.splice(index, 1, newEvent);
+    const newEvents = [...events];
+    setManageShowOrNot(false);
+    setEvents(newEvents)
+    setSelectedEvent("")
+    setManageIndex("")
   }
 
 
@@ -50,10 +58,10 @@ function App() {
     <HashRouter>
       <NavbarComp logOut={logOut} setShowOrNot={setShowOrNot} showOrNot={showOrNot} />
       <PainEventModal show={showOrNot} onHide={() => setShowOrNot(false)} addEvent={addEvent}  />
-      <EventManageModalComp show={manageShowOrNot} onHide={() => setManageShowOrNot(false)} selectedEvent={selectedEvent}  setSelectedEvent={setSelectedEvent} saveEvent={saveEvent} />
+      <EventManageModalComp show={manageShowOrNot} onHide={() => setManageShowOrNot(false)} selectedEvent={selectedEvent} saveEvent={saveEvent}  manageIndex={manageIndex}/>
       <Switch>
         <Route exact path="/"><HomePage users={users} login={login} userActive={userActive} /></Route>
-        <Route exact path="/dairys"><DairyPage userActvie={userActive} setShowOrNot={setShowOrNot} events={userActiveEvents} setSelectedEvent={setSelectedEvent} setManageShowOrNot={setManageShowOrNot} selectedEvent={selectedEvent}/></Route>
+        <Route exact path="/dairys"><DairyPage userActvie={userActive} setShowOrNot={setShowOrNot} events={userActiveEvents} setSelectedEvent={setSelectedEvent} setManageShowOrNot={setManageShowOrNot} selectedEvent={selectedEvent} manageIndex={manageIndex}/></Route>
       </Switch>
     </HashRouter>
 
