@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Row, Button } from 'react-bootstrap';
-import './painDairy.css'
+import './painDiary.css'
 
 
 

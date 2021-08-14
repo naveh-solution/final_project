@@ -2,7 +2,7 @@ import React from 'react';
 import { Container, Navbar, Nav, NavDropdown, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-function NavbarComp({ userActive, logOut, setShowOrNot, showOrNot }) {
+function NavbarComp({ userActive, logOut, setShowOrNot }) {
 
 
     return (
@@ -19,16 +19,16 @@ function NavbarComp({ userActive, logOut, setShowOrNot, showOrNot }) {
                         </NavDropdown>
                         <Nav.Link as={Link} to="/admin">Admin</Nav.Link>
                     </Nav>
-                    {userActive ? <><Nav className="ms-auto">
-                        <Nav.Link as={Button} onClick={logOut}>Log-Out</Nav.Link>
+                    { userActive ? <><Nav className="ms-auto">
+                        <Nav.Link as={Link} to="/" onClick={logOut}>Log-Out</Nav.Link>
                     </Nav></> : <><Nav className="ms-auto">
-                        <Nav.Link as={Button} onClick={logOut}>Log-In</Nav.Link>
-                        <Nav.Link as={Link} to="/sign-up" onClick={logOut}>Sign-Up</Nav.Link>
+                        <Nav.Link as={Link} to="/">Log-In</Nav.Link>
+                        <Nav.Link as={Link} to="/sign-up">Sign-Up</Nav.Link>
                     </Nav></>}
 
                 </Navbar.Collapse>
-                <Navbar.Brand href="#/">Pain dairy</Navbar.Brand>
             </Container>
+            <Navbar.Brand href="#/">Pain dairy</Navbar.Brand>
         </Navbar>
 
     )

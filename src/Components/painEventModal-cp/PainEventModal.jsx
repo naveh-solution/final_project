@@ -10,6 +10,7 @@ function PainEventModal({ addEvent, show, onHide }) {
     const [eventDate, setEventDate] = React.useState("")
     const [selfT, setSelfT] = React.useState("")
     const [envStatus, setEnvStatus] = React.useState("")
+    const [painLevel, setPainLevel] = React.useState("")
 
 
     React.useEffect(() => {
@@ -24,14 +25,14 @@ function PainEventModal({ addEvent, show, onHide }) {
     }, [show]);
 
     const createEvent = () => {
-        const newEvn = { 
+        const newEvn = {
             eventDate,
             startT,
-            endT : "",
+            endT: "",
             painLoc,
             painTriger,
             selfT,
-            envStatus, 
+            envStatus,
             physHelp: "",
             medHelp: "",
             otherHelp: ""
@@ -61,6 +62,11 @@ function PainEventModal({ addEvent, show, onHide }) {
                                             <Form.Label>Start Time:</Form.Label>
                                             <Form.Control type="time" className="dateTime" value={startT} onChange={e => setStartT(e.target.value)} ></Form.Control>
                                         </Form.Group>
+                                    </div>
+                                    <div className="myRange">
+                                        <Form.Label>Level of the Pain</Form.Label>
+                                        <Form.Range min={1} max={10} value={painLevel} onChange={ e => setPainLevel(e.target.value)}></Form.Range>
+                                        <p className="painLevelText">{painLevel}</p>
                                     </div>
                                     <Form.Group className="mb-3" controlId="formPainEventLoc">
                                         <Form.Label>Location of the Pain</Form.Label>
