@@ -5,6 +5,7 @@ class UserModel {
         this.lname = justUser.lname;
         this.email = justUser.email; 
         this.pwd = justUser.pwd;
+        this.cond = justUser.cond;
         this.privelage = justUser.privelage;
     }
 }

@@ -10,6 +10,7 @@ import PainEventModal from './Components/painEventModal-cp/PainEventModal';
 import EventData from './Data/EventData.json'
 import EventModel from './model/EventModel.js'
 import EventManageModalComp from './Components/eventManageModal-cp/EventManageModalComp';
+import SignUpPage from './pages/sign-upPage/SignUpPage'
 
 function App() {
 
@@ -68,6 +69,7 @@ function App() {
       <Switch>
         <Route exact path="/"><HomePage users={users} login={login} userActive={userActive} /></Route>
         <Route exact path="/dairys"><DairyPage userActvie={userActive} setShowOrNot={setShowOrNot} events={userActiveEvents} setSelectedEvent={setSelectedEvent} setManageShowOrNot={setManageShowOrNot} selectedEvent={selectedEvent} setManageIndex={setManageIndex}/></Route>
+         <Route exact path="/sign-up"><SignUpPage/> </Route>
       </Switch>
     </HashRouter>
 

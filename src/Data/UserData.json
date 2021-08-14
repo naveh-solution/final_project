@@ -5,15 +5,17 @@
         "lname": "naveh",
         "email": "guy@guy.com",
         "pwd": "223344",
+        "cond": "E.D.S",
         "privelage": "false"
     },
 
     {
         "id": 2,
-        "fname": "Guy",
-        "lname": "Naveh",
-        "email": "guyN@guy.com",
+        "fname": "Jon",
+        "lname": "Dow",
+        "email": "jon@jon.com",
         "pwd": "223344",
+        "cond" : "C.F.S",
         "privelage": "true"
     }
 ]
