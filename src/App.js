@@ -62,7 +62,7 @@ function App() {
 
   return (
     <HashRouter>
-      <NavbarComp logOut={logOut} setShowOrNot={setShowOrNot} showOrNot={showOrNot} />
+      <NavbarComp  userActive={userActive} logOut={logOut} setShowOrNot={setShowOrNot}/>
       <PainEventModal show={showOrNot} onHide={() => setShowOrNot(false)} addEvent={addEvent}  />
       <EventManageModalComp show={manageShowOrNot} onHide={() => handelCloseModal()} selectedEvent={selectedEvent} saveEvent={saveEvent}  manageIndex={manageIndex}/>
       <Switch>
