@@ -2,7 +2,7 @@ import React from 'react'
 import { Switch, Route, HashRouter} from "react-router-dom";
 import './App.css';
 import NavbarComp from './Components/Nav-cp/Navbar';
-import DairyPage from './pages/DairysPage/DairyPage';
+import DairyPage from './pages/DiarysPage/DiaryPage';
 import HomePage from './pages/HomePage/HomePage';
 import userData from './Data/UserData.json'
 import UserModel from './model/UserModel';
