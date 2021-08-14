@@ -10,7 +10,7 @@ function PainEventModal({ addEvent, show, onHide }) {
     const [eventDate, setEventDate] = React.useState("")
     const [selfT, setSelfT] = React.useState("")
     const [envStatus, setEnvStatus] = React.useState("")
-    const [painLevel, setPainLevel] = React.useState("")
+    const [painLevel, setPainLevel] = React.useState("1")
 
 
     React.useEffect(() => {
@@ -31,6 +31,7 @@ function PainEventModal({ addEvent, show, onHide }) {
             endT: "",
             painLoc,
             painTriger,
+            painLevel,
             selfT,
             envStatus,
             physHelp: "",
@@ -63,11 +64,7 @@ function PainEventModal({ addEvent, show, onHide }) {
                                             <Form.Control type="time" className="dateTime" value={startT} onChange={e => setStartT(e.target.value)} ></Form.Control>
                                         </Form.Group>
                                     </div>
-                                    <div className="myRange">
-                                        <Form.Label>Level of the Pain</Form.Label>
-                                        <Form.Range min={1} max={10} value={painLevel} onChange={ e => setPainLevel(e.target.value)}></Form.Range>
-                                        <p className="painLevelText">{painLevel}</p>
-                                    </div>
+                                  
                                     <Form.Group className="mb-3" controlId="formPainEventLoc">
                                         <Form.Label>Location of the Pain</Form.Label>
                                         <Form.Control as="textarea" rows={3} className="textarea" value={painLoc} onChange={e => setPainLoc(e.target.value)} ></Form.Control>
@@ -75,6 +72,11 @@ function PainEventModal({ addEvent, show, onHide }) {
                                     <Form.Group className="mb-3" controlId="formPainEventTrigger:">
                                         <Form.Label>Physical Trigger:</Form.Label>
                                         <Form.Control as="textarea" rows={3} className="textarea" value={painTriger} onChange={e => setPainTriger(e.target.value)}></Form.Control>
+                                        <div className="myRange">
+                                        <Form.Label>Level of the Pain</Form.Label>
+                                        <Form.Range min={1} max={10} value={painLevel} onChange={ e => setPainLevel(e.target.value)}></Form.Range>
+                                        <p className="painLevelText">{painLevel}</p>
+                                    </div>
                                     </Form.Group>
                                 </Form>
                             </Col>

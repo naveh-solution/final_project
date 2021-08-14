@@ -9,6 +9,7 @@ class EventModel{
         this.endT = plainEvent.endT;
         this.painLoc = plainEvent.painLoc;
         this.painTriger = plainEvent.painTriger;
+        this.painLevel = plainEvent.painLevel;
         this.selfT = plainEvent.selfT;
         this.envStatus = plainEvent.envStatus; 
         this.physHelp = plainEvent.physHelp;

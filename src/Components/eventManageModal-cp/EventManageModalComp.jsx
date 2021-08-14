@@ -14,6 +14,8 @@ function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIn
     const [medHelp, setMedHelp] = React.useState("")
     const [physHelp, setPhysHelp] = React.useState("")
     const [otherHelp, setOtherHelp] = React.useState("")
+    const [painLevel, setPainLevel] = React.useState("1")
+
 
     React.useEffect(() => {
        if(!show && !selectedEvent) {
@@ -27,6 +29,7 @@ function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIn
             setMedHelp("")
             setPhysHelp("")
             setOtherHelp("")
+            setPainLevel("1")
         }
     }, [show]);
 
@@ -42,6 +45,7 @@ function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIn
             setMedHelp(selectedEvent.medHelp)
             setPhysHelp(selectedEvent.physHelp)
             setOtherHelp(selectedEvent.otherHelp)
+            setPainLevel(selectedEvent.painLevel)
         }
     }, [selectedEvent])
 
@@ -95,6 +99,11 @@ function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIn
                                     <Form.Group className="mb-3" controlId="formPainEventTrigger:">
                                         <Form.Label>Physical Trigger:</Form.Label>
                                         <Form.Control as="textarea" rows={2} className="textarea" value={painTriger} onChange={e => setPainTriger(e.target.value)}></Form.Control>
+                                        <div className="myRange">
+                                        <Form.Label>Level of the Pain</Form.Label>
+                                        <Form.Range min={1} max={10} value={painLevel} onChange={ e => setPainLevel(e.target.value)}></Form.Range>
+                                        <p className="painLevelText">{painLevel}</p>
+                                    </div>
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formPainEventSelfT">
                                         <Form.Label>Self Thoughts:</Form.Label>
