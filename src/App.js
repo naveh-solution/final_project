@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route, HashRouter} from "react-router-dom";
+import { Switch, Route, HashRouter, Redirect} from "react-router-dom";
 import './App.css';
 import NavbarComp from './Components/Nav-cp/Navbar';
 import DairyPage from './pages/DiarysPage/DiaryPage';
@@ -67,8 +67,8 @@ function App() {
       <PainEventModal show={showOrNot} onHide={() => setShowOrNot(false)} addEvent={addEvent}  />
       <EventManageModalComp show={manageShowOrNot} onHide={() => handelCloseModal()} selectedEvent={selectedEvent} saveEvent={saveEvent}  manageIndex={manageIndex}/>
       <Switch>
-        <Route exact path="/"><HomePage users={users} login={login} userActive={userActive} /></Route>
-        <Route exact path="/dairys"><DairyPage userActvie={userActive} setShowOrNot={setShowOrNot} events={userActiveEvents} setSelectedEvent={setSelectedEvent} setManageShowOrNot={setManageShowOrNot} selectedEvent={selectedEvent} setManageIndex={setManageIndex}/></Route>
+        <Route exact path="/"><HomePage users={users} login={login} userActive={userActive}/></Route>
+        <Route exact path="/diarys"><DairyPage userActvie={userActive} setShowOrNot={setShowOrNot} events={userActiveEvents} setSelectedEvent={setSelectedEvent} setManageShowOrNot={setManageShowOrNot} selectedEvent={selectedEvent} setManageIndex={setManageIndex}/></Route>
          <Route exact path="/sign-up"><SignUpPage/> </Route>
       </Switch>
     </HashRouter>

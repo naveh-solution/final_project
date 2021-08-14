@@ -13,7 +13,7 @@ function HomePage({users, login, userActive}) {
 
     return (
         <div className="home-p">
-            <h1>Pain Dairy</h1>
+            <h1>Pain Diary</h1>
             <div className="cardsDiv">
                 <CardComp/>
                 <CardComp/>

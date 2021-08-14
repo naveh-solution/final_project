@@ -3,22 +3,22 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, Redirect } from 'react-router-dom';
 import './loginComp.css';
 
-function LoginComp({users, login, userActive}) {
+function LoginComp({ users, login }) {
     const [email, setEmail] = React.useState("");
     const [userPwd, setUserPwd] = React.useState("");
 
-    
-    
-    function loginB(){
+
+
+    function loginB() {
         const userActive = users.find(user => user.email === email && user.pwd === userPwd)
-        if (userActive){
-           login(userActive)
+        if (userActive) {
+            login(userActive)
+        }
+        if (userActive) {
+            return <Redirect to="/diarys" />
         }
     }
 
-    if (userActive){
-        return <Redirect to="/dairys"/>
-    }
 
     return (
         <div className="login-cp">
@@ -35,14 +35,14 @@ function LoginComp({users, login, userActive}) {
 
                 <Form.Group className="sm-3" controlId="formBasicPassword">
                     <Form.Label>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password"  className="textIn" value={userPwd} onChange={(e) => setUserPwd(e.target.value)}/>
+                    <Form.Control type="password" placeholder="Password" className="textIn" value={userPwd} onChange={(e) => setUserPwd(e.target.value)} />
                 </Form.Group>
                 <div className="loginSignup">
-                <Button variant="success" className="buttonBg" type="button" onClick={loginB}>
-                    LOG-IN
-                </Button> <Button variant="success" className="buttonBg" type="button" onClick={loginB}>
-                    SIGN-UP
-                </Button>
+                    <Button variant="success" className="buttonBg" type="button" onClick={loginB}>
+                        LOG-IN
+                    </Button> <Button variant="success" className="buttonBg" type="button" onClick={loginB}>
+                        SIGN-UP
+                    </Button>
                 </div>
             </Form>
         </div>
