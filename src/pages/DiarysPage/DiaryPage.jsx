@@ -7,14 +7,8 @@ import PainEventModal from '../../Components/painEventModal-cp/PainEventModal';
 
 
 function DairyPage({ userActvie, setShowOrNot, events, setSelectedEvent, setManageShowOrNot, selectedEvent, setManageIndex }) {
-    console.log(userActvie)
-
-
-    if (!userActvie) {
-        return <Redirect to="/" />
-    }
-
-    console.log(events);
+    console.log("debug for:" + userActvie)
+    console.log("debug for:" + events);
 
     // const hours = new Date().getHours(); 
     // const min = new Date().getMinutes();
@@ -26,12 +20,12 @@ function DairyPage({ userActvie, setShowOrNot, events, setSelectedEvent, setMana
         <div>
             <h1>Diary Page</h1>
             <PainDairyComp events={events} userActvie={userActvie} setShowOrNot={setShowOrNot}
-                setSelectedEvent={setSelectedEvent} setManageShowOrNot={setManageShowOrNot} 
+                setSelectedEvent={setSelectedEvent} setManageShowOrNot={setManageShowOrNot}
                 selectedEvent={selectedEvent} setManageIndex={setManageIndex} />
-           
-           
+
+
             <div className="buttom-nav nav">
-            <Link to="/">to Home Page</Link>
+                <Link to="/">to Home Page</Link>
             </div>
         </div>
     );

@@ -20,7 +20,7 @@ function HomePage({users, login, userActive}) {
                 <CardComp/>
             </div>
             <div className="login-div">
-             <LoginComp  users={users} login={login} userActive={userActive}/> 
+            { !userActive ? <LoginComp  users={users} login={login} userActive={userActive}/> : null}  
              </div>
         </div>
     )   
