@@ -2,8 +2,8 @@ import React from 'react';
 import { Container, Navbar, Nav, NavDropdown, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
-function NavbarComp({userActive, logOut, setShowOrNot, showOrNot}) {
-     
+function NavbarComp({ userActive, logOut, setShowOrNot, showOrNot }) {
+
 
     return (
         <Navbar bg="light" expand="lg">
@@ -19,10 +19,13 @@ function NavbarComp({userActive, logOut, setShowOrNot, showOrNot}) {
                         </NavDropdown>
                         <Nav.Link as={Link} to="/admin">Admin</Nav.Link>
                     </Nav>
-                    {userActive ?  <><Nav className="ms-auto">
+                    {userActive ? <><Nav className="ms-auto">
                         <Nav.Link as={Button} onClick={logOut}>Log-Out</Nav.Link>
-                    </Nav></> : null }
-                    
+                    </Nav></> : <><Nav className="ms-auto">
+                        <Nav.Link as={Button} onClick={logOut}>Log-In</Nav.Link>
+                        <Nav.Link as={Link} to="/sign-up" onClick={logOut}>Sign-Up</Nav.Link>
+                    </Nav></>}
+
                 </Navbar.Collapse>
                 <Navbar.Brand href="#/">Pain dairy</Navbar.Brand>
             </Container>
