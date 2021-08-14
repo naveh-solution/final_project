@@ -42,7 +42,7 @@ span.note{
     margin: 3px;
 }
 
-.createBtn{
+.createBtn, .cancelBtn {
     margin: 3px 5px;
     border-radius: 20px;
 }

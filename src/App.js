@@ -18,8 +18,8 @@ function App() {
   const [showOrNot, setShowOrNot] = React.useState(false);
   const [manageShowOrNot, setManageShowOrNot] = React.useState(false);
   const [events, setEvents] = React.useState(EventData.map( plainEvent => new EventModel(plainEvent)))
-  const [selectedEvent, setSelectedEvent] = React.useState()
-  const [manageIndex, setManageIndex] = React.useState()
+  const [selectedEvent, setSelectedEvent] = React.useState(null)
+ const [manageIndex, setManageIndex] = React.useState(null)
 
   const userActiveEvents = userActive ? events.filter(plainEvent => plainEvent.activeUId === userActive.id) : [] ;
 
@@ -33,17 +33,23 @@ function App() {
   }
 
 
-  function saveEvent(newEvent, index){
-    
+  const  saveEvent = (newEvent, index) => {
+
+    console.log("seve event", index)
     const activeUId = userActive ? userActive.id : null ;
     newEvent.activeUId = activeUId;
-    events.splice(index, 1, newEvent);
     const newEvents = [...events];
+    newEvents[index] = newEvent;
     setManageShowOrNot(false);
     setEvents(newEvents)
     setSelectedEvent("")
     setManageIndex("")
   }
+
+  const handelCloseModal = () => {
+    setSelectedEvent(null)
+    setManageShowOrNot(false)
+}
 
 
   function login(newUserActive) {
@@ -58,10 +64,10 @@ function App() {
     <HashRouter>
       <NavbarComp logOut={logOut} setShowOrNot={setShowOrNot} showOrNot={showOrNot} />
       <PainEventModal show={showOrNot} onHide={() => setShowOrNot(false)} addEvent={addEvent}  />
-      <EventManageModalComp show={manageShowOrNot} onHide={() => setManageShowOrNot(false)} selectedEvent={selectedEvent} saveEvent={saveEvent}  manageIndex={manageIndex}/>
+      <EventManageModalComp show={manageShowOrNot} onHide={() => handelCloseModal()} selectedEvent={selectedEvent} saveEvent={saveEvent}  manageIndex={manageIndex}/>
       <Switch>
         <Route exact path="/"><HomePage users={users} login={login} userActive={userActive} /></Route>
-        <Route exact path="/dairys"><DairyPage userActvie={userActive} setShowOrNot={setShowOrNot} events={userActiveEvents} setSelectedEvent={setSelectedEvent} setManageShowOrNot={setManageShowOrNot} selectedEvent={selectedEvent} manageIndex={manageIndex}/></Route>
+        <Route exact path="/dairys"><DairyPage userActvie={userActive} setShowOrNot={setShowOrNot} events={userActiveEvents} setSelectedEvent={setSelectedEvent} setManageShowOrNot={setManageShowOrNot} selectedEvent={selectedEvent} setManageIndex={setManageIndex}/></Route>
       </Switch>
     </HashRouter>
 

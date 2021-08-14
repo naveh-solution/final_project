@@ -16,7 +16,7 @@ function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIn
     const [otherHelp, setOtherHelp] = React.useState("")
 
     React.useEffect(() => {
-       if(!show) {
+       if(!show && !selectedEvent) {
             setPainLoc("")
             setPainTriger("")
             setStartT("")
@@ -38,6 +38,10 @@ function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIn
             setEventDate(selectedEvent.eventDate)
             setSelfT(selectedEvent.selfT)
             setEnvStatus(selectedEvent.envStatus)
+            setEndT(selectedEvent.endT)
+            setMedHelp(selectedEvent.medHelp)
+            setPhysHelp(selectedEvent.physHelp)
+            setOtherHelp(selectedEvent.otherHelp)
         }
     }, [selectedEvent])
 
@@ -123,6 +127,7 @@ function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIn
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
+                    <Button className="cancelBtn" onClick={() => onHide()}>Cancel</Button>
                     <Button className="createBtn" onClick={() => createEvent()}>Save</Button>
                 </Modal.Footer>
             </Modal>

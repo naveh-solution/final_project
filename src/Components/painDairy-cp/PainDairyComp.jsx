@@ -5,27 +5,28 @@ import './painDairy.css'
 
 
 
-function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent, setManageShowOrNot, selectedEvent, manageIndex }) {
+function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent, setManageShowOrNot, selectedEvent, setManageIndex }) {
 
-    const [isSelected, setIsSelected] = React.useState(false)
+    // const [isSelected, setIsSelected] = React.useState(false)
 
-    let inSelected
+    // let inSelected
    
    //function that get the selected event from the list and will open it in the modal for editing
     function eventToModal(selectedEvent, index){
-        setIsSelected(true)
-        inSelected = selectedEvent;
-        manageIndex = index;
+        setSelectedEvent(selectedEvent);
+        setManageIndex(index);
     }
 
     function manageClick(){
-        setSelectedEvent(inSelected);
+        // setSelectedEvent(inSelected);
         setManageShowOrNot(true);
     }
 
+   
+
     return (
         <div>
-            {events.map((event, index) => <div className="mainDairyComp" key={event.id} onClick= {() => eventToModal(event, index) }>
+            {events.map((event, index) => <div className="mainDairyComp"  key={event.id} onClick= {() => eventToModal(event, index) }>
                 <Col>
                     <div className="colDiv">
                         <h6>Day of Event:</h6>
@@ -55,7 +56,7 @@ function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent, set
             </div>)}
             <div className="eventsBtns">
                 <Button variant="success" onClick={() => setShowOrNot(true)}>Create new Event</Button>
-                <Button variant="success" disabled={!isSelected} onClick={() => manageClick() }>Manage Event</Button>
+                <Button variant="success" disabled={!selectedEvent} onClick={() => manageClick() }>Manage Event</Button>
                 <Button variant="success">Sheare Event</Button>
             </div>
         </div>
