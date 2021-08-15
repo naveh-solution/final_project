@@ -16,6 +16,10 @@ function DairyPage({ userActvie, setShowOrNot, events, setSelectedEvent, setMana
 
     console.log(events);
 
+    if(!userActvie){
+      return   <Redirect to="/"/>
+    }
+
     // const hours = new Date().getHours(); 
     // const min = new Date().getMinutes();
     // const currentTime = hours + ":" + min

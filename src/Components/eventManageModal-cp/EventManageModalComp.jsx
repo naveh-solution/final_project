@@ -51,6 +51,7 @@ function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIn
 
     const createEvent = () => {
         const newEvn = { 
+            id: selectedEvent.id,
             eventDate,
             startT,
             endT,

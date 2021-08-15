@@ -1,17 +1,35 @@
 import React from 'react';
-import { Button, Form, Col, Row, ButtonGroup, Container } from 'react-bootstrap';
+import { Button, Form, Col, Row, ButtonGroup, Container, ThemeProvider } from 'react-bootstrap';
 import './signUpComp.css'
 
-function SignUpComp({ setUserAcive }) {
+function SignUpComp({ addUser, userActive }) {
 
     const [email, setEmail] = React.useState("");
-    const [userPwd, setUserPwd] = React.useState("");
+    const [pwd, setPwd] = React.useState("");
     const [fname, setFname] = React.useState("");
     const [lname, setLname] = React.useState("");
     const [gender, setGender] = React.useState("");
     const [age, setAge] = React.useState("");
     const [cond, setCond] = React.useState("");
 
+
+    const createUser = () => {
+
+        const newUser = {
+        fname,
+        lname,
+        email,
+        gender,
+        age, 
+        pwd,
+        cond
+        }
+
+        addUser(newUser)
+
+    }
+
+       
 
     return (
         <div className="mainSignup">
@@ -30,8 +48,7 @@ function SignUpComp({ setUserAcive }) {
                                     onChange={(e) => setLname(e.target.value)} />
                             </Form.Group>
                         </Col>
-                    </Row>
-                    <Row>
+
                         <Col>
                             <Form.Group className="sm-3" controlId="formBasicAge">
                                 <Form.Label>Your Age :</Form.Label>
@@ -47,28 +64,37 @@ function SignUpComp({ setUserAcive }) {
                             </Form.Group>
                         </Col>
                     </Row>
-
-                    <Form.Group className="sm-3" controlId="formBasicCond">
-                        <Form.Label>Conditaion :
-                            <span className="textInCon"> (e.g C.F.S, E.D.S, Fibromialgya ect.)</span>
-                        </Form.Label>
-                        <Form.Control type="input" placeholder="Conditaion" className="textIn" value={cond}
-                            onChange={(e) => setCond(e.target.value)} />
-                    </Form.Group>
-
-                    <Form.Group className="sm-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" className="textIn" value={email}
-                            onChange={(e) => setEmail(e.target.value)} />
-                    </Form.Group>
-                    <Form.Group className="sm-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" className="textIn" value={userPwd}
-                            onChange={(e) => setUserPwd(e.target.value)} />
-                    </Form.Group>
+                    <Row>
+                        <Col>
+                            <Form.Group className="sm-3" controlId="formBasicCond">
+                                <Form.Label>Conditaion :
+                                    <span className="textInCon"> (e.g C.F.S, E.D.S, Fibromialgya ect.)</span>
+                                </Form.Label>
+                                <Form.Control as="textarea" rows={3} placeholder="Conditaion" className="textIn" value={cond}
+                                    onChange={(e) => setCond(e.target.value)} />
+                            </Form.Group>
+                        </Col>
+                        <Col>
+                            <Form.Group className="sm-3 me" controlId="formBasicEmail">
+                                <Form.Label>Email address</Form.Label>
+                                <Form.Control type="email" placeholder="Enter email" className="textIn" value={email}
+                                    onChange={(e) => setEmail(e.target.value)} />
+                            </Form.Group>
+                            <Form.Group className="sm-3" controlId="formBasicPassword">
+                                <Form.Label>Password</Form.Label>
+                                <Form.Control type="password" placeholder="Password" className="textIn" value={pwd}
+                                    onChange={(e) => setPwd(e.target.value)} />
+                            </Form.Group>
+                        </Col>
+                    </Row>
                 </Container>
             </Form>
-
+            <div className="d-flex justify-content-end btnDiv">
+            <ThemeProvider prefixes={{ btn: 'my-btn' }}>
+                <Button  className="signupBtn" onClick={() => createUser()}>Sign-Up</Button>
+                <Button  className="signupCBtn">Cancel</Button>
+                </ThemeProvider>{' '}
+            </div>
         </div>
     );
 }
