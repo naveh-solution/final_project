@@ -54,8 +54,8 @@ function App() {
     newSaveEvent = new EventModel(newSaveEvent);
     // console.log("debug for manage Event : " + newSaveEvent)
     const newEvents = [...events];
-    newEvents[index] = newSaveEvent;
-    // newEvents.splice(index, 1, newSaveEvent)
+    // newEvents[index] = newSaveEvent;
+    newEvents.splice(index, 1, newSaveEvent)
     // console.log( "debug 2 for Manage Event" + newEvents)
     setManageShowOrNot(false);
     setEvents(newEvents)
@@ -70,6 +70,7 @@ function App() {
 
 
   function login(newUserActive) {
+    console.log(newUserActive);
     setUserActive(newUserActive);
   }
 

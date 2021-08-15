@@ -1,19 +1,10 @@
 import React from 'react';
-import { Button, Form } from 'react-bootstrap';
-import SignUpComp from '../../Components/SignUp-cp/SignUpComp';
-import { Redirect } from 'react-router-dom';
-import './signUpPage.css'
+import './backgroundComp.css'
 
-function SignUpPage({addUser, userActive}) {
-
-    if(userActive){
-       return <Redirect to="/diarys"/>
-    }
-
+function BackgroundComp() {
     return (
-        <div className="signUpMain-p">
-            <SignUpComp addUser={addUser} userActive={userActive}/>
-             {/* <section class="sticky">
+        <div className="background-p">
+              <section class="sticky">
                 <div class="bubbles">
                     <div class="bubble"></div>
                     <div class="bubble"></div>
@@ -26,9 +17,9 @@ function SignUpPage({addUser, userActive}) {
                     <div class="bubble"></div>
                     <div class="bubble"></div>
                 </div>
-            </section> */}
+            </section>
         </div>
     );
 }
 
-export default SignUpPage
+export default BackgroundComp;

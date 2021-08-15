@@ -28,7 +28,7 @@ function NavbarComp({ userActive, logOut, setShowOrNot }) {
 
                 </Navbar.Collapse>
             </Container>
-            <Navbar.Brand href="#/">Pain dairy</Navbar.Brand>
+            <Navbar.Brand href="#/">Pain diary</Navbar.Brand>
         </Navbar>
 
     )

@@ -12,6 +12,7 @@ function LoginComp({ users, login, userActive }) {
     function loginB() {
         const newUserActive = users.find(user => user.email === email && user.pwd === userPwd)
         if (newUserActive) {
+            console.log(newUserActive)
             login(newUserActive)
         }
     }

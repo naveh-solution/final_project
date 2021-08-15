@@ -13,7 +13,6 @@ function HomePage({ users, login, userActive }) {
 
     return (
         <div className="home-p">
-            <BackgroundComp/>
             <h1>Pain Diary</h1>
             <div className="cardsDiv">
                 <CardComp />
@@ -23,7 +22,7 @@ function HomePage({ users, login, userActive }) {
             <div className="login-div">
                 {!userActive ? <LoginComp users={users} login={login} userActive={userActive} /> : null}
             </div>
-            <section class="sticky">
+            {/* <section class="my-Buble">
                 <div class="bubbles">
                     <div class="bubble"></div>
                     <div class="bubble"></div>
@@ -36,7 +35,7 @@ function HomePage({ users, login, userActive }) {
                     <div class="bubble"></div>
                     <div class="bubble"></div>
                 </div>
-            </section>
+            </section> */}
         </div>
 
     )
