@@ -15,15 +15,11 @@ function LoginComp({ users, login, userActive }) {
             login(newUserActive)
         }
     }
-    if (userActive) {
-        return <Redirect to="/diarys" />
-    }
-
 
     return (
         <div className="login-cp">
             <h4>Login to your Dairy</h4>
-            <p className="signupText">or <Link to="/signup">you can Signup here</Link> to start creating your own</p>
+            <p className="signupText">or <Link to="/sign-up">you can Signup here</Link> to start creating your own</p>
             <Form>
                 <Form.Group className="sm-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
@@ -40,7 +36,8 @@ function LoginComp({ users, login, userActive }) {
                 <div className="loginSignup">
                     <Button variant="success" className="buttonBg" type="button" onClick={loginB}>
                         LOG-IN
-                    </Button> <Button variant="success" className="buttonBg" type="button" onClick={loginB}>
+                    </Button> 
+                    <Button variant="success" className="buttonBg" type="button" onClick={() => <Redirect to="/sign-up"></Redirect>}>
                         SIGN-UP
                     </Button>
                 </div>

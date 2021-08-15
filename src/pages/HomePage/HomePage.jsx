@@ -9,7 +9,6 @@ import './homePage.css'
 
 function HomePage({users, login, userActive}) {
 
-   
 
     return (
         <div className="home-p">

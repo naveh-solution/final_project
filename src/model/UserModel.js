@@ -5,7 +5,7 @@ class UserModel {
 
     constructor (justUser){
 
-        this.id = nanoid(6);
+        this.id = justUser.id;
         this.fname = justUser.fname;
         this.lname = justUser.lname;
         this.email = justUser.email;

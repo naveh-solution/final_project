@@ -1,0 +1,13 @@
+div.mainSignup > .formDiv{
+
+    display: flex;
+}
+
+.textInCon{
+    font-size: 11px;
+}
+
+div.mainSignup {
+    width: 700px;
+    margin: 200px auto;
+}
