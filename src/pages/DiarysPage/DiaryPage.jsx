@@ -10,9 +10,9 @@ function DairyPage({ userActvie, setShowOrNot, events, setSelectedEvent, setMana
     console.log(userActvie)
 
 
-    if (!userActvie) {
-        return <Redirect to="/" />
-    }
+    // if (!userActvie) {
+    //     return <Redirect to="/" />
+    // }
 
     console.log(events);
 

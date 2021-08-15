@@ -17,7 +17,7 @@ function NavbarComp({ userActive, logOut, setShowOrNot }) {
                             <NavDropdown.Item as={Button} onClick={() => setShowOrNot(true)} disabled={!userActive}>Create Event</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to="/recommendation">Recommendations</NavDropdown.Item>
                         </NavDropdown>
-                        <Nav.Link as={Link} to="/admin">Admin</Nav.Link>
+                        <Nav.Link as={Link} to="/admin">About</Nav.Link>
                     </Nav>
                     { userActive ? <><Nav className="ms-auto">
                         <Nav.Link as={Link} to="/" onClick={logOut}>Log-Out</Nav.Link>

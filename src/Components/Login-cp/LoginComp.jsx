@@ -3,20 +3,20 @@ import { Button, Form } from 'react-bootstrap';
 import { Link, Redirect } from 'react-router-dom';
 import './loginComp.css';
 
-function LoginComp({ users, login }) {
+function LoginComp({ users, login, userActive }) {
     const [email, setEmail] = React.useState("");
     const [userPwd, setUserPwd] = React.useState("");
 
 
 
     function loginB() {
-        const userActive = users.find(user => user.email === email && user.pwd === userPwd)
-        if (userActive) {
-            login(userActive)
+        const newUserActive = users.find(user => user.email === email && user.pwd === userPwd)
+        if (newUserActive) {
+            login(newUserActive)
         }
-        if (userActive) {
-            return <Redirect to="/diarys" />
-        }
+    }
+    if (userActive) {
+        return <Redirect to="/diarys" />
     }
 
 
