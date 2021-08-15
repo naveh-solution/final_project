@@ -5,6 +5,10 @@
     border-radius: 20px;
     margin: 15px 10px;
 }
+
+.selectedClass{
+    border: 4px solid rgb(88, 240, 141);
+}
 .eventsBtns{
     display: flex;
     justify-content: space-around;

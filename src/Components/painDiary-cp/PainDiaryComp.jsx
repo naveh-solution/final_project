@@ -18,12 +18,13 @@ function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent, set
         // setSelectedEvent(inSelected);
         setManageShowOrNot(true);
     }
-
-
+   
+    const selectedClass = ""
 
     return (
         <div>
-            {events.map((event, index) => <div className="mainDairyComp" key={event.id} onClick={() => eventToModal(event, index)}>
+            {events.map((event, index) =>
+            <div className={event === selectedEvent ? "mainDairyComp selectedClass" : "mainDairyComp"} key={event.id} onClick={() => eventToModal(event, index)}>
                 <Col>
                     <div className="colDiv">
                         <h6>Day of Event:</h6>
@@ -62,7 +63,7 @@ function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent, set
                 </ThemeProvider>{' '}
             </div>
         </div>
-    );
+            );
 }
 
 export default PainDairyComp;

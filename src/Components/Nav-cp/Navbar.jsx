@@ -1,12 +1,13 @@
 import React from 'react';
 import { Container, Navbar, Nav, NavDropdown, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './navbar.css'
 
 function NavbarComp({ userActive, logOut, setShowOrNot }) {
 
 
     return (
-        <Navbar bg="light" expand="lg">
+        <Navbar bg="light" expand="lg" className="mainNav">
             <Container>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -15,7 +16,7 @@ function NavbarComp({ userActive, logOut, setShowOrNot }) {
                         <NavDropdown title="Dairy" id="basic-nav-dropdown">
                             <NavDropdown.Item as={Link} to="/diarys">All Events</NavDropdown.Item>
                             <NavDropdown.Item as={Button} onClick={() => setShowOrNot(true)} disabled={!userActive}>Create Event</NavDropdown.Item>
-                            <NavDropdown.Item as={Link} to="/recommendation">Recommendations</NavDropdown.Item>
+                            <NavDropdown.Item as={Link} to="/recommendation"  disabled={!userActive}>Recommendations</NavDropdown.Item>
                         </NavDropdown>
                         <Nav.Link as={Link} to="/admin">About</Nav.Link>
                     </Nav>
