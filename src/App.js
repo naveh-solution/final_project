@@ -28,6 +28,8 @@ function App() {
   function addEvent(newEvent) {
     const activeUId = userActive ? userActive.id : null ;
     newEvent.activeUId = activeUId;
+    const evnId = nanoid(6);
+    newEvent.id = evnId;
     newEvent = new EventModel(newEvent);
     console.log(newEvent);
     setEvents(events.concat(newEvent));
@@ -35,7 +37,6 @@ function App() {
   }
 
   function addUser(newUser) {
-    console.log(newUser , users)
     const uId = nanoid(6);
     newUser.id = uId;
     newUser = new UserModel(newUser);
@@ -51,9 +52,11 @@ function App() {
     const activeUId = userActive ? userActive.id : null ;
     newSaveEvent.activeUId = activeUId;
     newSaveEvent = new EventModel(newSaveEvent);
+    // console.log("debug for manage Event : " + newSaveEvent)
     const newEvents = [...events];
-    // newEvents[index] = newSaveEvent;
-    newEvents.splice(index, 1, newSaveEvent)
+    newEvents[index] = newSaveEvent;
+    // newEvents.splice(index, 1, newSaveEvent)
+    // console.log( "debug 2 for Manage Event" + newEvents)
     setManageShowOrNot(false);
     setEvents(newEvents)
     setSelectedEvent("")

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Form } from 'react-bootstrap';
+import { Button, Form, ThemeProvider } from 'react-bootstrap';
 import { Link, Redirect } from 'react-router-dom';
 import './loginComp.css';
 
@@ -34,12 +34,14 @@ function LoginComp({ users, login, userActive }) {
                     <Form.Control type="password" placeholder="Password" className="textIn" value={userPwd} onChange={(e) => setUserPwd(e.target.value)} />
                 </Form.Group>
                 <div className="loginSignup">
+                <ThemeProvider prefixes={{ btn: 'my-btn' }}>
                     <Button variant="success" className="buttonBg" type="button" onClick={loginB}>
                         LOG-IN
                     </Button> 
                     <Button variant="success" className="buttonBg" type="button" onClick={() => <Redirect to="/sign-up"></Redirect>}>
                         SIGN-UP
                     </Button>
+                    </ThemeProvider>
                 </div>
             </Form>
         </div>

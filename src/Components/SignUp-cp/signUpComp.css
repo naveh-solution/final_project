@@ -1,4 +1,4 @@
-div.mainSignup > .formDiv{
+div.mainSignup-cp > .formDiv{
 
     display: flex;
 }
@@ -16,7 +16,8 @@ div.btnDiv >  .my-btn {
 }
 
 
-div.mainSignup {
+
+div.mainSignup-cp {
     width: 700px;
-    margin: 200px auto;
+    margin:  auto;
 }

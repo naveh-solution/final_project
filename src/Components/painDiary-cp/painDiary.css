@@ -1,17 +1,21 @@
 .mainDairyComp{
     display: flex;
-    background-color:  #a5c3afff;
+    background-color:  #81a38dff;
     border: solid 1px #3c5344ff;
     border-radius: 20px;
-    margin: 5px;
+    margin: 15px 10px;
 }
 .eventsBtns{
     display: flex;
     justify-content: space-around;
 }
 
-.myBtn{
-    background-color: #3c5344ff;
+.my-btn {
+    margin: 5px 7px;
+    background-color: #81a38dff;
+    border: 0.5px solid  #096b72ff;
+    box-shadow: 1px 3px #103e42ff;
+    border-radius: 5px;  
 }
 
 .colDiv{

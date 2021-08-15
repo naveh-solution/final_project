@@ -32,7 +32,7 @@ function SignUpComp({ addUser, userActive }) {
        
 
     return (
-        <div className="mainSignup">
+        <div className="mainSignup-cp">
             <Form className="formDiv">
                 <Container>
                     <Row>

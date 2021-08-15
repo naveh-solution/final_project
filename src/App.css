@@ -1,12 +1,10 @@
 div[class *= "-p"]{
   background-color: #a5c3afff;
-  margin: 15px auto;
+  margin: auto;
+  height: 100vh;
 }
 
 div[class *= "-cp"]{
   background-color: #a5c3afff;
   margin: 15px auto;
-}
-#root{
-  background-color: #c0d8caff;
 }

@@ -4,8 +4,7 @@
     right: 0;
     width: 300px;
     margin: auto 10px;
-    background-color: #dbe9e0ff;
-    border: solid #81a38dff 1px;
+    /* border: solid #81a38dff 1px; */
     border-radius: 8px;
 }
 
@@ -25,6 +24,7 @@
 
 .textIn{
     width: 75%;
+    background-color: #b3efe1ff;
 }
 
 .buttonBg{
@@ -33,4 +33,12 @@
 
 .signupText{
     font-size: 13px;
+}
+
+.my-btn {
+    margin: 5px 7px;
+    background-color: #81a38dff;
+    border: 0.5px solid  #096b72ff;
+    box-shadow: 1px 3px #103e42ff;
+    border-radius: 5px;  
 }

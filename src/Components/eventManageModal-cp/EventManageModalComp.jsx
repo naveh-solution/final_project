@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Col, Form, Modal, Row } from 'react-bootstrap';
+import { Button, Col, Form, Modal, Row, ThemeProvider } from 'react-bootstrap';
 import './eventManageModalComp.css'
 
 function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIndex }) {
@@ -18,7 +18,7 @@ function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIn
 
 
     React.useEffect(() => {
-       if(!show && !selectedEvent) {
+        if (!show && !selectedEvent) {
             setPainLoc("")
             setPainTriger("")
             setStartT("")
@@ -50,24 +50,25 @@ function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIn
     }, [selectedEvent])
 
     const createEvent = () => {
-        const newEvn = { 
-            id: selectedEvent.id,
+        const newEvn = {
+            // id: selectedEvent.id,
             eventDate,
             startT,
             endT,
             painLoc,
             painTriger,
             selfT,
-            envStatus, 
+            envStatus,
             physHelp,
             medHelp,
-            otherHelp
+            otherHelp,
+            // activeUId: selectedEvent.activeUId  
         }
         saveEvent(newEvn, manageIndex);
     }
 
     return (
-        <div>
+        <div className="manageModal-cp">
             <Modal show={show} onHide={onHide} size="xl" aria-labelledby="cont-for-adding_manage-event" centered >
                 <Modal.Header closeButton>
                     <Modal.Title id="cont-for-adding_manage-event">
@@ -80,7 +81,7 @@ function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIn
                             <Col className="leftPenEvent" md={5}>
                                 <Form>
                                     <Row className="mb-3 dateTimeRow">
-                                        <Form.Group as={Col} sm={4}controlId="formPainEventStartT:" className="dateTimeInput">
+                                        <Form.Group as={Col} sm={4} controlId="formPainEventStartT:" className="dateTimeInput">
                                             <Form.Label>Date of Event</Form.Label>
                                             <Form.Control type="date" className="dateTime" value={eventDate} onChange={e => setEventDate(e.target.value)} ></Form.Control>
                                         </Form.Group>
@@ -101,10 +102,10 @@ function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIn
                                         <Form.Label>Physical Trigger:</Form.Label>
                                         <Form.Control as="textarea" rows={2} className="textarea" value={painTriger} onChange={e => setPainTriger(e.target.value)}></Form.Control>
                                         <div className="myRange">
-                                        <Form.Label>Level of the Pain</Form.Label>
-                                        <Form.Range min={1} max={10} value={painLevel} onChange={ e => setPainLevel(e.target.value)}></Form.Range>
-                                        <p className="painLevelText">{painLevel}</p>
-                                    </div>
+                                            <Form.Label>Level of the Pain</Form.Label>
+                                            <Form.Range min={1} max={10} value={painLevel} onChange={e => setPainLevel(e.target.value)}></Form.Range>
+                                            <p className="painLevelText">{painLevel}</p>
+                                        </div>
                                     </Form.Group>
                                     <Form.Group className="mb-3" controlId="formPainEventSelfT">
                                         <Form.Label>Self Thoughts:</Form.Label>
@@ -137,8 +138,10 @@ function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIn
                     </div>
                 </Modal.Body>
                 <Modal.Footer>
-                    <Button className="cancelBtn" onClick={() => onHide()}>Cancel</Button>
-                    <Button className="createBtn" onClick={() => createEvent()}>Save</Button>
+                    <ThemeProvider prefixes={{ btn: 'my-btn' }}>
+                        <Button className="cancelBtn" onClick={() => onHide()}>Cancel</Button>
+                        <Button className="createBtn" onClick={() => createEvent()}>Save</Button>
+                    </ThemeProvider>
                 </Modal.Footer>
             </Modal>
         </div>

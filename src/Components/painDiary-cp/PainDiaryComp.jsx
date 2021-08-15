@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Row, Button } from 'react-bootstrap';
+import { Col, Row, Button, ThemeProvider } from 'react-bootstrap';
 import './painDiary.css'
 
 
@@ -7,9 +7,6 @@ import './painDiary.css'
 
 function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent, setManageShowOrNot, selectedEvent, setManageIndex }) {
 
-    // const [isSelected, setIsSelected] = React.useState(false)
-
-    // let inSelected
 
     //function that get the selected event from the list and will open it in the modal for editing
     function eventToModal(selectedEvent, index) {
@@ -58,9 +55,11 @@ function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent, set
                 </Col>
             </div>)}
             <div className="eventsBtns">
+            <ThemeProvider prefixes={{ btn: 'my-btn' }}>
                 <Button variant="success" onClick={() => setShowOrNot(true)}>Create new Event</Button>
                 <Button variant="success" disabled={!selectedEvent} onClick={() => manageClick()}>Manage Event</Button>
                 <Button variant="success">Sheare Event</Button>
+                </ThemeProvider>{' '}
             </div>
         </div>
     );
