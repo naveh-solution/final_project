@@ -62,6 +62,7 @@ function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIn
             physHelp,
             medHelp,
             otherHelp,
+            painLevel
             // activeUId: selectedEvent.activeUId  
         }
         saveEvent(newEvn, manageIndex);
