@@ -13,7 +13,7 @@ function SignUpPage({addUser, userActive}) {
     return (
         <div className="signUpMain-p">
             <SignUpComp addUser={addUser} userActive={userActive}/>
-             {/* <section class="sticky">
+             <section class="sticky">
                 <div class="bubbles">
                     <div class="bubble"></div>
                     <div class="bubble"></div>
@@ -26,7 +26,7 @@ function SignUpPage({addUser, userActive}) {
                     <div class="bubble"></div>
                     <div class="bubble"></div>
                 </div>
-            </section> */}
+            </section>
         </div>
     );
 }

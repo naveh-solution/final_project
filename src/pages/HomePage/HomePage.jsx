@@ -22,7 +22,7 @@ function HomePage({ users, login, userActive }) {
             <div className="login-div">
                 {!userActive ? <LoginComp users={users} login={login} userActive={userActive} /> : null}
             </div>
-            {/* <section class="my-Buble">
+            <section class="my-Buble">
                 <div class="bubbles">
                     <div class="bubble"></div>
                     <div class="bubble"></div>
@@ -35,7 +35,7 @@ function HomePage({ users, login, userActive }) {
                     <div class="bubble"></div>
                     <div class="bubble"></div>
                 </div>
-            </section> */}
+            </section>
         </div>
 
     )

@@ -54,9 +54,10 @@ function App() {
     newSaveEvent.activeUId = activeUId;
     newSaveEvent = new EventModel(newSaveEvent);
     // console.log("debug for manage Event : " + newSaveEvent)
+    debugger
     const newEvents = [...events];
-    // newEvents[index] = newSaveEvent;
-    newEvents.splice(index, 1, newSaveEvent)
+    newEvents[index] = newSaveEvent;
+    // newEvents.splice(index, 1, newSaveEvent)
     // console.log( "debug 2 for Manage Event" + newEvents)
     setManageShowOrNot(false);
     setEvents(newEvents)

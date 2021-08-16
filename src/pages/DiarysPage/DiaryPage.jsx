@@ -29,7 +29,7 @@ function DairyPage({ userActvie, setShowOrNot, events, setSelectedEvent, setMana
             <PainDairyComp events={events} userActvie={userActvie} setShowOrNot={setShowOrNot}
                 setSelectedEvent={setSelectedEvent} setManageShowOrNot={setManageShowOrNot} 
                 selectedEvent={selectedEvent} setManageIndex={setManageIndex} />  
-                 {/* <section class="sticky">
+                 <section class="sticky">
                 <div class="bubbles">
                     <div class="bubble"></div>
                     <div class="bubble"></div>
@@ -42,7 +42,7 @@ function DairyPage({ userActvie, setShowOrNot, events, setSelectedEvent, setMana
                     <div class="bubble"></div>
                     <div class="bubble"></div>
                 </div>
-            </section>   */}
+            </section>  
         </div>
     );
 }
