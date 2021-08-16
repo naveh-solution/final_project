@@ -13,7 +13,7 @@ function NavbarComp({ userActive, logOut, setShowOrNot }) {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto">
                         <Nav.Link as={Link} to="/">Home</Nav.Link>
-                        <NavDropdown title="Dairy" id="basic-nav-dropdown">
+                        <NavDropdown title="Diary" id="basic-nav-dropdown">
                             <NavDropdown.Item as={Link} to="/diarys">All Events</NavDropdown.Item>
                             <NavDropdown.Item as={Button} onClick={() => setShowOrNot(true)} disabled={!userActive}>Create Event</NavDropdown.Item>
                             <NavDropdown.Item as={Link} to="/recommendation"  disabled={!userActive}>Recommendations</NavDropdown.Item>
