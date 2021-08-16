@@ -22,7 +22,7 @@ div[class *= "-cp"]{
 .bubbles{
   position:absolute;
   width:100vw;
-  height: 100%;
+  height: 100vh;
   z-index:-1;
   overflow:hidden;
   pointer-events: none;
@@ -36,7 +36,7 @@ div[class *= "-cp"]{
   height: 40px;
   background:#81a38dff;
   border-radius:50%;
-  opacity:0.5;
+  opacity:0.1;
   animation: rise 10s infinite ease-in;
 }
 .bubble:nth-child(1){

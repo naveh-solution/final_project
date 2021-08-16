@@ -25,3 +25,7 @@
     height: 70px;
 }
 
+.cardDiv:hover{
+    border: #81a38dff solid 5px;
+}
+
