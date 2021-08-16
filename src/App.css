@@ -15,9 +15,6 @@ div[class *= "-cp"]{
   margin: auto;
 }
 
-.background-p{
-  z-index: -1;
-}
 
 .bubbles{
   position:absolute;
@@ -34,9 +31,9 @@ div[class *= "-cp"]{
   bottom:-100px;
   width:40px;
   height: 40px;
-  background:#81a38dff;
+  background-image: radial-gradient(rgb(63, 139, 90), #81a38dff,white);
   border-radius:50%;
-  opacity:0.1;
+  opacity:1;
   animation: rise 10s infinite ease-in;
 }
 .bubble:nth-child(1){

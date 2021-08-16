@@ -1,7 +1,7 @@
 .login-cp{
-    position: fixed;
-    bottom: 0;
-    right: 0;
+    position:absolute;
+    bottom: 10px;
+    right: 10px;
     width: 300px;
     margin: auto 10px;
     /* border: solid #81a38dff 1px; */

@@ -6,26 +6,39 @@
     margin: 20px 10px;
 }
 
-.cardDiv h5{
+.cardTitel{
+
     text-align: center;
     font-family: 'Style Script', cursive;
-    margin: 5px 5px;
-    padding: 10px auto;
+    margin: 8px 5px;
+    padding: 7px;
 }
 
-.cardDiv p{
+.cardText > p{
    padding: 2px 10px;
    font-size: 12px;
+   color: #103e42ff;
 }
 
-.cardImg{
-    margin: 25px 5px;
-    margin-left: 38px;
+div.cardImg > .Img{
+    margin-top: 17px;
+    margin-left: 39px;
     width: 70px;
     height: 70px;
 }
 
 .cardDiv:hover{
-    border: #81a38dff solid 5px;
+    border: #81a38dff 3px solid;
+    background-color: #81a38dff;
+    animation: getBiger forwards 5s;
 }
 
+@keyframes getBiger {
+    0%{
+        transform: scale(100%);
+    }
+    100%{
+        transform: scale(175%);
+    }
+
+}
