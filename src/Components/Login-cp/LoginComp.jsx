@@ -17,6 +17,14 @@ function LoginComp({ users, login, userActive }) {
         }
     }
 
+    function redair(){
+        return <Redirect to="/sign-up"/>
+    }
+
+    if(userActive){
+        return <Redirect to="/diarys"/>
+    }
+
     return (
         <div className="login-cp">
             <h4>Login to your Dairy</h4>
@@ -39,7 +47,7 @@ function LoginComp({ users, login, userActive }) {
                     <Button variant="success" className="buttonBg" type="button" onClick={loginB}>
                         LOG-IN
                     </Button> 
-                    <Button variant="success" className="buttonBg" type="button" onClick={() => <Redirect to="/sign-up"></Redirect>}>
+                    <Button variant="success" className="buttonBg" type="button" onClick={redair}>
                         SIGN-UP
                     </Button>
                     </ThemeProvider>

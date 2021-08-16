@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Navbar, Nav, NavDropdown, Button } from 'react-bootstrap';
+import { Container, Navbar, Nav, NavDropdown, Button, ThemeProvider } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import './navbar.css'
 
@@ -7,7 +7,7 @@ function NavbarComp({ userActive, logOut, setShowOrNot }) {
 
 
     return (
-        <Navbar bg="light" expand="lg" className="mainNav">
+        <Navbar bg="light" expand="md" className="mainNav">
             <Container>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
@@ -31,7 +31,6 @@ function NavbarComp({ userActive, logOut, setShowOrNot }) {
             </Container>
             <Navbar.Brand href="#/">Pain diary</Navbar.Brand>
         </Navbar>
-
     )
 }
 
