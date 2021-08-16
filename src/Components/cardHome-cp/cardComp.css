@@ -2,19 +2,26 @@
     width: 300px;
     height: 300px;
     border-radius: 50%;
-    border: 1.5px solid ;
-    margin: auto 10px;
+    border: 1.5px solid  #81a38dff;
+    margin: 20px 10px;
 }
 
-.cardDiv > h5{
+.cardDiv h5{
     text-align: center;
     font-family: 'Style Script', cursive;
-    margin: 25px 5px;
+    margin: 5px 5px;
     padding: 10px auto;
 }
 
-.cardDiv ~ p{
-   padding: 25px 10px;
+.cardDiv p{
+   padding: 2px 10px;
    font-size: 12px;
+}
+
+.cardImg{
+    margin: 25px 5px;
+    margin-left: 38px;
+    width: 70px;
+    height: 70px;
 }
 
