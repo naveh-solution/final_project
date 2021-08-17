@@ -1,9 +1,12 @@
 .cardDiv{
+    display: flex;
+    flex-direction: column;
     width: 300px;
     height: 300px;
     border-radius: 50%;
     border: 1.5px solid  #81a38dff;
-    margin: 20px 10px;
+    margin: 20px 80px;
+
 }
 
 .cardTitel{
@@ -22,7 +25,7 @@
 
 div.cardImg > .Img{
     margin-top: 17px;
-    margin-left: 39px;
+    margin-left: 50px;
     width: 70px;
     height: 70px;
 }

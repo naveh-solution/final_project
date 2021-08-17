@@ -17,10 +17,10 @@ function HomePage({ users, login, userActive }) {
             <div className="cardsDiv">
                 <CardComp imgSrc="https://static.thenounproject.com/png/3968708-200.png" titel="Physical" text="The physical pain is reale and you can feel it some where in your body" />
                 <CardComp imgSrc="https://i.dlpng.com/static/png/6331675_preview.png" titel="Psychological" text="We are what we think our thogut affect our life"/>
-                <CardComp imgSrc="https://image.flaticon.com/icons/png/128/2821/2821176.png" titel="Environmental" text="How the Environment is reacting is part of what we think about our self"/>
+                <CardComp imgSrc="https://image.flaticon.com/icons/png/128/2821/2821176.png" titel="Environment" text="How the Environment is reacting is part of what we think about our self"/>
             </div>
             <div className="login-div">
-                {!userActive ? <LoginComp users={users} login={login} userActive={userActive} animation={""}/> : null}
+                {!userActive ? <LoginComp users={users} login={login} userActive={userActive} /> : null}
             </div>
             <section class="my-Buble">
                 <div class="bubbles">

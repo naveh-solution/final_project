@@ -1,9 +1,10 @@
 import React from 'react';
+import { Row } from 'react-bootstrap';
 import './cardComp.css'
 
 function CardComp({imgSrc, titel, text, animation}) {
     return (
-        <div className={"cardDiv"+ " " + animation}>
+        <Row className={"cardDiv"+ " " + animation}>
             <div className="cardImg">
             <img className="Img" src={imgSrc} alt="headace" />
             </div>
@@ -13,7 +14,7 @@ function CardComp({imgSrc, titel, text, animation}) {
             <div className="cardText">
             <p>{text}</p>
             </div>
-        </div>
+        </Row>
     );
 }
 
