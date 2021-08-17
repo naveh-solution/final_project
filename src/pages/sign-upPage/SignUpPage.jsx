@@ -13,20 +13,6 @@ function SignUpPage({addUser, userActive}) {
     return (
         <div className="signUpMain-p">
             <SignUpComp addUser={addUser} userActive={userActive}/>
-             <section class="sticky">
-                <div class="bubbles">
-                    <div class="bubble"></div>
-                    <div class="bubble"></div>
-                    <div class="bubble"></div>
-                    <div class="bubble"></div>
-                    <div class="bubble"></div>
-                    <div class="bubble"></div>
-                    <div class="bubble"></div>
-                    <div class="bubble"></div>
-                    <div class="bubble"></div>
-                    <div class="bubble"></div>
-                </div>
-            </section>
         </div>
     );
 }

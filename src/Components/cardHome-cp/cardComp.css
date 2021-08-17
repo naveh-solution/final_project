@@ -27,7 +27,7 @@ div.cardImg > .Img{
     height: 70px;
 }
 
-.cardDiv:hover{
+.cardDivAni:hover{
     border: #81a38dff 3px solid;
     background-color: #81a38dff;
     animation: getBiger forwards 5s;

@@ -1,9 +1,9 @@
 import React from 'react';
 import './cardComp.css'
 
-function CardComp({imgSrc, titel, text}) {
+function CardComp({imgSrc, titel, text, animation}) {
     return (
-        <div className="cardDiv">
+        <div className={"cardDiv"+ " " + animation}>
             <div className="cardImg">
             <img className="Img" src={imgSrc} alt="headace" />
             </div>

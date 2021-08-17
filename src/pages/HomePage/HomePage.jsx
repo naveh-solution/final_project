@@ -20,7 +20,7 @@ function HomePage({ users, login, userActive }) {
                 <CardComp imgSrc="https://image.flaticon.com/icons/png/128/2821/2821176.png" titel="Environmental" text="How the Environment is reacting is part of what we think about our self"/>
             </div>
             <div className="login-div">
-                {!userActive ? <LoginComp users={users} login={login} userActive={userActive} /> : null}
+                {!userActive ? <LoginComp users={users} login={login} userActive={userActive} animation={""}/> : null}
             </div>
             <section class="my-Buble">
                 <div class="bubbles">
