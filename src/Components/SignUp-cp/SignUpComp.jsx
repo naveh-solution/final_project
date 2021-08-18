@@ -14,7 +14,7 @@ function SignUpComp({ addUser, userActive }) {
 
 
     const createUser = () => {
-
+        console.log(gender)
         const newUser = {
         fname,
         lname,
@@ -57,9 +57,9 @@ function SignUpComp({ addUser, userActive }) {
                             </Form.Group>
                             <Form.Group className="sm-3" controlId="formBasicGender">
                                 <ButtonGroup size="sm">
-                                    <Button>Female</Button>
-                                    <Button>Male</Button>
-                                    <Button>Other</Button>
+                                    <Button onClick={(e) => (setGender(e.target.value))} value="Feamle">Female</Button>
+                                    <Button onClick={(e) => (setGender(e.target.value))} value="Male">Male</Button>
+                                    <Button onClick={(e) => (setGender(e.target.value))} value="Other">Other</Button>
                                 </ButtonGroup>
                             </Form.Group>
                         </Col>

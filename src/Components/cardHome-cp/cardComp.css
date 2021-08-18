@@ -1,8 +1,8 @@
 .cardDiv{
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     border-radius: 50%;
     border: 1.5px solid  #81a38dff;
     margin: 20px 80px;
@@ -13,8 +13,8 @@
 
     text-align: center;
     font-family: 'Style Script', cursive;
-    margin: 8px 5px;
-    padding: 7px;
+    margin: 3px 5px;
+    padding: 4px;
 }
 
 .cardText > p{
@@ -25,7 +25,7 @@
 
 div.cardImg > .Img{
     margin-top: 17px;
-    margin-left: 50px;
+    margin-left: 73px;
     width: 70px;
     height: 70px;
 }
