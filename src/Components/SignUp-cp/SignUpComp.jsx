@@ -57,9 +57,11 @@ function SignUpComp({ addUser, userActive }) {
                             </Form.Group>
                             <Form.Group className="sm-3" controlId="formBasicGender">
                                 <ButtonGroup size="sm">
+                                    <ThemeProvider prefixes={{btn : "my-btn"}}>
                                     <Button onClick={(e) => (setGender(e.target.value))} value="Feamle">Female</Button>
                                     <Button onClick={(e) => (setGender(e.target.value))} value="Male">Male</Button>
                                     <Button onClick={(e) => (setGender(e.target.value))} value="Other">Other</Button>
+                                    </ThemeProvider>
                                 </ButtonGroup>
                             </Form.Group>
                         </Col>
