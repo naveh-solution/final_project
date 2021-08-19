@@ -33,7 +33,8 @@ div.cardImg > .Img{
 .cardDivAni:hover{
     border: #81a38dff 3px solid;
     background-color: #81a38dff;
-    animation: getBiger forwards 5s;
+    animation: getBiger both 5s;
+    animation-direction: alternate;
 }
 
 @keyframes getBiger {
@@ -41,7 +42,7 @@ div.cardImg > .Img{
         transform: scale(100%);
     }
     100%{
-        transform: scale(175%);
+        transform: scale(170%);
     }
 
 }

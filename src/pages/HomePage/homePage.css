@@ -5,9 +5,9 @@
     right: 0;
 }
 
-.cardsDiv{
+div.cardsDiv{
     width: 800px;
-    margin: auto;
+    margin-left: 65px;
     display: flex;
     justify-content: space-between;
 }

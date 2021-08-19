@@ -82,15 +82,15 @@ function EventManageModalComp({ show, onHide, selectedEvent, saveEvent, manageIn
                             <Col className="leftPenEvent" md={5}>
                                 <Form>
                                     <Row className="mb-3 dateTimeRow">
-                                        <Form.Group as={Col} sm={4} controlId="formPainEventStartT:" className="dateTimeInput">
+                                        <Form.Group as={Col} sm={12} md={5} controlId="formPainEventStartT:" className="dateTimeInput">
                                             <Form.Label>Date of Event</Form.Label>
                                             <Form.Control type="date" className="dateTime" value={eventDate} onChange={e => setEventDate(e.target.value)} ></Form.Control>
                                         </Form.Group>
-                                        <Form.Group as={Col} sm={4} controlId="formPainEventStartT:" className="dateTimeInput">
+                                        <Form.Group as={Col} sm={12} md={5} controlId="formPainEventStartT:" className="dateTimeInput">
                                             <Form.Label>Start Time:</Form.Label>
                                             <Form.Control type="time" className="dateTime" value={startT} onChange={e => setStartT(e.target.value)} ></Form.Control>
                                         </Form.Group>
-                                        <Form.Group as={Col} sm={4} controlId="formPainEventStartT:" className="dateTimeInput">
+                                        <Form.Group as={Col} sm={12} md={5} controlId="formPainEventStartT:" className="dateTimeInput">
                                             <Form.Label>End Time:</Form.Label>
                                             <Form.Control type="time" className="dateTime" value={endT} onChange={e => setEndT(e.target.value)} ></Form.Control>
                                         </Form.Group>

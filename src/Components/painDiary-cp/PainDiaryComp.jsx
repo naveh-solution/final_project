@@ -25,7 +25,7 @@ function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent, set
         <div>
             {events.map((event, index) =>
             <div className={event === selectedEvent ? "mainDairyComp selectedClass" : "mainDairyComp"} key={event.id} onClick={() => eventToModal(event, index)}>
-                <Col>
+                <Col md={5} sm={12}>
                     <div className="colDiv">
                         <h6>Day of Event:</h6>
                         <p className="innerText">{event.eventDate}</p>
@@ -42,15 +42,15 @@ function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent, set
                     </div>
 
                 </Col>
-                <Col md={2} className="painDcol">
+                <Col md={2} sm={12} className="painDcol">
                     <h6>Self Thoughts:</h6>
                     <p>{event.selfT} </p>
                 </Col>
-                <Col md={2} className="painDcol">
+                <Col md={2} sm={12} className="painDcol">
                     <h6>Physical Trigger:</h6>
                     <p>{event.painTriger}</p>
                 </Col>
-                <Col md={2} className="painDcol">
+                <Col md={2} sm={12} className="painDcol">
                     <h6>What Helped:</h6>
                     <p> <span>{event.physHelp ? <>Physical: {event.physHelp} </> : null}</span> <span>{event.medHelp ? <>Meds:  {event.medHelp} </> : null}  </span>  <span>{event.otherHelp ? <> Other:  {event.otherHelp} </> : null}  </span></p>
                 </Col>
