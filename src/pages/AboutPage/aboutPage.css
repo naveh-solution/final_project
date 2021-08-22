@@ -1,6 +1,6 @@
 div.cardsDiv{
-    width: 800px;
-    margin-left: 65px;
+    margin: auto;
+    /* width: 800px; */
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
 }

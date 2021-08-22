@@ -4,7 +4,7 @@ import './cardComp.css'
 
 function CardComp({imgSrc, titel, text, animation}) {
     return (
-        <Row className={"cardDiv"+ " " + animation}>
+        <div className={"cardDiv"+ " " + animation}>
             <div className="cardImg">
             <img className="Img" src={imgSrc} alt="headace" />
             </div>
@@ -14,7 +14,7 @@ function CardComp({imgSrc, titel, text, animation}) {
             <div className="cardText">
             <p>{text}</p>
             </div>
-        </Row>
+        </div>
     );
 }
 

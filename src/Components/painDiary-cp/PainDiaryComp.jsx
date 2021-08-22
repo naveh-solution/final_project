@@ -24,7 +24,7 @@ function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent, set
     return (
         <div>
             {events.map((event, index) =>
-            <div className={event === selectedEvent ? "mainDairyComp selectedClass" : "mainDairyComp"} key={event.id} onClick={() => eventToModal(event, index)}>
+            <Row className={event === selectedEvent ? "mainDairyComp selectedClass" : "mainDairyComp"} key={event.id} onClick={() => eventToModal(event, index)}>
                 <Col md={5} sm={12}>
                     <div className="colDiv">
                         <h6>Day of Event:</h6>
@@ -54,7 +54,7 @@ function PainDairyComp({ events, userActive, setShowOrNot, setSelectedEvent, set
                     <h6>What Helped:</h6>
                     <p> <span>{event.physHelp ? <>Physical: {event.physHelp} </> : null}</span> <span>{event.medHelp ? <>Meds:  {event.medHelp} </> : null}  </span>  <span>{event.otherHelp ? <> Other:  {event.otherHelp} </> : null}  </span></p>
                 </Col>
-            </div>)}
+            </Row>)}
             <div className="eventsBtns">
             <ThemeProvider prefixes={{ btn: 'my-btn' }}>
                 <Button variant="success" onClick={() => setShowOrNot(true)}>Create new Event</Button>

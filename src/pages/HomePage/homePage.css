@@ -1,13 +1,14 @@
 .login-div{
     width: 200px;
-    position: fixed;
-    bottom: 0;
-    right: 0;
+    margin: auto;
+}
+
+div.colMd {
+    margin-left: 60px;
 }
 
 div.cardsDiv{
-    width: 800px;
-    margin-left: 65px;
+    /* width: 800px; */
     display: flex;
     justify-content: space-between;
 }

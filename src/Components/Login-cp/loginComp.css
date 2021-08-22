@@ -1,11 +1,11 @@
 .login-cp{
-    position:absolute;
+    /* position:absolute;
     bottom: 10px;
-    right: 10px;
-    width: 300px;
-    margin: auto 10px;
+    right: 10px; */
+    width: 200px;
+    /* margin: auto 10px; */
     /* border: solid #81a38dff 1px; */
-    border-radius: 8px;
+    /* border-radius: 8px; */
 }
 
 .loginSignup{
