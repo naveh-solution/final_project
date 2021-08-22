@@ -28,9 +28,9 @@ function HomePage({ users, login, userActive }) {
                         text="How the Environment is reacting is part of what we think about our self" />
                 </Col>
             </Row>
-            <div className="login-div">
+            {/* <div className="login-div">
                 {!userActive ? <LoginComp users={users} login={login} userActive={userActive} /> : null}
-            </div>
+            </div> */}
             <section className="my-Buble">
                 <div className="bubbles">
                     <div className="bubble"></div>

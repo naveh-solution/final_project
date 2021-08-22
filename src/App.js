@@ -13,6 +13,7 @@ import EventManageModalComp from './Components/eventManageModal-cp/EventManageMo
 import SignUpPage from './pages/sign-upPage/SignUpPage';
 import {nanoid} from 'nanoid';
 import AboutPage from './pages/AboutPage/AboutPage';
+import LoginPage from './pages/LoginPage/LoginPage';
 
 function App() {
 
@@ -91,6 +92,7 @@ function App() {
         <Route exact path="/diarys"><DairyPage userActvie={userActive} setShowOrNot={setShowOrNot} events={userActiveEvents} setSelectedEvent={setSelectedEvent} setManageShowOrNot={setManageShowOrNot} selectedEvent={selectedEvent} setManageIndex={setManageIndex}/></Route>
          <Route exact path="/sign-up"><SignUpPage addUser={addUser} userActive={userActive}/> </Route>
          <Route exact path="/about"><AboutPage/></Route>
+         <Route exact path="/log-in"><LoginPage users={users} login={login} userActive={userActive}/></Route>
       </Switch>
     </HashRouter>
 

@@ -2,11 +2,11 @@ body{
   background-color: #a5c3afff !important;
 }
 
-div[class *= "-p"]{
+/* div[class *= "-p"]{
   background-color: #a5c3afff;
   margin: auto;
   height: 100vh;
-}
+} */
 
 div[class *= "-p"] > h1 {
   text-align: center;

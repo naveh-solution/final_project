@@ -23,7 +23,7 @@ function NavbarComp({ userActive, logOut, setShowOrNot }) {
                     { userActive ? <><Nav className="ms-auto">
                         <Nav.Link as={Link} to="/" onClick={logOut}>Log-Out</Nav.Link>
                     </Nav></> : <><Nav className="ms-auto">
-                        <Nav.Link as={Link} to="/">Log-In</Nav.Link>
+                        <Nav.Link as={Link} to="/log-in">Log-In</Nav.Link>
                         <Nav.Link as={Link} to="/sign-up">Sign-Up</Nav.Link>
                     </Nav></>}
 
