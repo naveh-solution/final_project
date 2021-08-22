@@ -1,9 +1,9 @@
-.mainDairyComp{
-    display: flex;
+div.mainDairyComp{
     background-color:  #81a38dff;
     border: solid 1px #3c5344ff;
     border-radius: 20px;
     margin: 15px 10px;
+    justify-content: space-around;
 }
 
 .selectedClass{
@@ -38,7 +38,7 @@
     padding: 7px;
 }
 
-.painDcol{
+div.painDcol{
     border: 1px solid #3c5344ff ;
     border-radius: 20px;
     padding: 7px;
